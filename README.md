@@ -1,4 +1,4 @@
-# Classes_VehicleDynamics_2026Spring
+# Classes_VehicleDynamics_2026Fall
 
 <!--
 The following template is based on:
@@ -12,18 +12,18 @@ Search for this, and you will find!
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
-  <h2 align="center"> Classes_VehicleDynamics_2026Spring
+  <h2 align="center"> Classes_VehicleDynamics_2026Fall
   </h2>
 
   <pre align="center">
-    <img src=".\Images\RaceCar.jpg" alt="main laps picture" width="500" height="333">
+    <img src=".\Images\2026Fall_Audi.jpg" alt="main canvas picture" width="364" height="547">
     <!--figcaption>Fig.1 - The typical progression of map generation.</figcaption -->
-    <font size="-2">Photo by <a href="https://unsplash.com/@jjames25?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jeff James</a> on <a href="https://unsplash.com/photos/green-race-car-speeding-on-wet-track-Sr0WL3jHEJA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    <font size="-2">Photo by <a href="https://unsplash.com/@rpnickson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Roberto Nickson</a> on <a href="https://unsplash.com/photos/black-vehicle-on-road-between-trees-during-daytime-Yp9FdEqaCdk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
       </font>
 </pre>
 
   <p align="center">
-    The purpose of this code repo is to house the code, documents, assignments, etc. for vehicle dynamics. Each semester's materials are copied from the "core" material, with passwords added to documents that contain copyright material that should not be shared to the public. Passwords are shared on Canvas. 
+    The purpose of this code repo is to house the code, documents, assignments, etc. for vehicle dynamics. Each semester's materials are copied from the "core" material, with passwords added to documents that contain copyright material that should not be shared to the public. Passwords are shared on Canvas.
     <br />
   </p>
 </p>
@@ -85,58 +85,62 @@ Search for this, and you will find!
 
 M E 452 – VEHICLE DYNAMICS
 
-SPRING 2026
-MWF 3:35-4:25 pm
-307 Hammond Building
+Fall 2026
+MWF 2:30-3:20 pm
+Earth and Eng Sciences 121
+Aug 24, 2026 - Dec 11, 2026
 
-### Instructor:	
-Dr. Sean Brennan				
-Office:  227 Reber Building		 	
+### Instructor
+
+Dr. Sean Brennan
+Office:  227 Reber Building
 157 N. Burrowes Rd.
 Penn State University
 University Park, PA 16802
-Phone:	(814) 863-2430
+Phone: (814) 863-2430
 
-Email:	 sbrennan@psu.edu 
-* NOTE: this is the same address as snb10@psu.edu, just easier to remember and less likely to confuse zeros and ones with letters
-* NOTE: Please do NOT send urgent messages to the professor or the TA via Canvas as we do not check this account regularly.
+Email:  <sbrennan@psu.edu>
 
-### Office hours:	
+* NOTE: this is the same address as <snb10@psu.edu>, just easier to remember and less likely to confuse zeros and ones with letters
+* NOTE: Please do NOT send urgent messages to the professor or the TA via Canvas. Canvas maintains its own internal email capability that does not support basic email operations - forwarding, CC other students, keyword search, automatic rules, etc. This makes it very difficult to reply quickly. In our main email, we look for the keyword "452" so please be sure this is in the subject line.
+
+### Office hours
+
 Thursdays on Zoom from 3pm to 5pm
 
-### Course TA:	
+### Course TA
+
 TBD
 
-### Topics:	
+### Topics
+
 This course conducts investigations of one-dimensional, two-dimensional, and three-dimensional dynamics, kinematics, and design - each integrated into the study of vehicle dynamics. Topics include body kinematics, steady state body dynamics, transient stability, tire forces, suspension, automatic control, and driver interaction. The emphasis is on the analysis of a vehicle as a complex system, recognizing how to abstract observed behaviors into appropriate mathematical models, how to decompose behaviors into subsystems, how to construct and perform numerical simulations, and how to design and analyze experiments to test models and simulations to gain insights into design goals and tradeoffs.  
 
-
-
-### Prerequisites:  
+### Prerequisites  
 
 ME 370 (required), Co-requisite:  ME 450 (required)
 
-The content of this course requires students to demonstrate a familiarity with basic tools used for systems and signals analysis including: Laplace transforms, eigenvalues, bode plots, and frequency response. Students should be sufficiently familiar with differential equations such that basic solution methods - forced response versus initial response - can be distinguished. Students should have a firm understanding of mass-spring-damper systems along with detailed knowledge characteristic responses of these systems in underdamped, critically damped, over-damped conditions. We will be analyzing the differential equations for systems in transfer-function, state-space, and frequency domains and will often switch representations suddenly to gain insight. This analysis will strongly complement ME450, hence why this class is listed as a co-requisite. 
+The content of this course requires students to demonstrate a familiarity with basic tools used for systems and signals analysis including: Laplace transforms, eigenvalues, bode plots, and frequency response. Students should be sufficiently familiar with differential equations such that basic solution methods - forced response versus initial response - can be distinguished. Students should have a firm understanding of mass-spring-damper systems along with detailed knowledge characteristic responses of these systems in underdamped, critically damped, over-damped conditions. We will be analyzing the differential equations for systems in transfer-function, state-space, and frequency domains and will often switch representations suddenly to gain insight. This analysis will strongly complement ME450, hence why this class is listed as a co-requisite.
 
-Nearly all assignments will require the use of MATLAB and deep knowledge of this software is beneficial but not expected. For students who are not familiar with this software, tutorials are provided. However, a memory of structured programming as well as some willingness to learn this material is expected. 
+Nearly all assignments will require the use of MATLAB and deep knowledge of this software is beneficial but not expected. For students who are not familiar with this software, tutorials are provided. However, a memory of structured programming as well as some willingness to learn this material is expected.
 
-And one final note on prerequisites: students are NOT expected to be “gearheads” to both enjoy this course and be very successful academically! Indeed, one observation is that hobby-level knowledge is often wrong or situationally specific, and some students may have trouble with “unlearning” material that is incorrect or that is only valid for racecars, not passenger vehicles. 
+And one final note on prerequisites: students are NOT expected to be “gearheads” to both enjoy this course and be very successful academically! Indeed, one observation is that hobby-level knowledge is often wrong or situationally specific, and some students may have trouble with “unlearning” material that is incorrect or that is only valid for racecars, not passenger vehicles.
 
-### Detailed Course Objectives:  
+### Detailed Course Objectives  
 
 Upon completion of the course, students should be able to:
 
-1.	Associate observed vehicle behavior with the vehicle dynamic model causing the motion. 
-2.	Identify and mathematically characterize linear and nonlinear behavior in a vehicle or vehicle subsystem including characteristics of the dynamic models, experimental responses, and simulation outcomes. 
-3.	Code, implement and critically analyze the results of numerical simulations and other computational models of vehicle system behavior, specifically focusing on lumped-parameter models and methods of decomposing behaviors into simpler interconnected subsystems, and error-checking subsystems and their interactions.
-4.	Predict the influence of subsystem behavior on entire vehicle system performance using a variety of tools including but not limited to simulation models, steady-state analysis of equations of motion, solving differential equations, graphical analysis, and frequency-domain analysis.
-5.	Evaluate the primary design constraints that govern vehicle and subsystem design. Using these principles, should be able to evaluate and justify existing vehicle system designs and formulate improved designs for new vehicle subsystems.
-6.	Calculate the limits of vehicle designs including acceleration and braking, cornering ability, suspension and ride handling, roll stability, etc. 
-7.	Explain how common changes in vehicle setup – weight distribution, wheel usage, etc. – affects vehicle stability and braking performance in both low and high-speed driving, in both steady-state and transient maneuvers.
-8.	Justify existing tradeoffs in model simplicity or complexity in representing an actual system. By examination of the vehicle system behavior, students are expected to form and justify mathematical model representations of suitable complexity, even extending this to new systems and situations.
-9.	Understand and characterize how automated subsystems such as ABS, rear-wheel steering, and active suspension will change vehicle performance and vehicle/roadway interaction.
+1. Associate observed vehicle behavior with the vehicle dynamic model causing the motion.
+2. Identify and mathematically characterize linear and nonlinear behavior in a vehicle or vehicle subsystem including characteristics of the dynamic models, experimental responses, and simulation outcomes.
+3. Code, implement and critically analyze the results of numerical simulations and other computational models of vehicle system behavior, specifically focusing on lumped-parameter models and methods of decomposing behaviors into simpler interconnected subsystems, and error-checking subsystems and their interactions.
+4. Predict the influence of subsystem behavior on entire vehicle system performance using a variety of tools including but not limited to simulation models, steady-state analysis of equations of motion, solving differential equations, graphical analysis, and frequency-domain analysis.
+5. Evaluate the primary design constraints that govern vehicle and subsystem design. Using these principles, should be able to evaluate and justify existing vehicle system designs and formulate improved designs for new vehicle subsystems.
+6. Calculate the limits of vehicle designs including acceleration and braking, cornering ability, suspension and ride handling, roll stability, etc.
+7. Explain how common changes in vehicle setup – weight distribution, wheel usage, etc. – affects vehicle stability and braking performance in both low and high-speed driving, in both steady-state and transient maneuvers.
+8. Justify existing tradeoffs in model simplicity or complexity in representing an actual system. By examination of the vehicle system behavior, students are expected to form and justify mathematical model representations of suitable complexity, even extending this to new systems and situations.
+9. Understand and characterize how automated subsystems such as ABS, rear-wheel steering, and active suspension will change vehicle performance and vehicle/roadway interaction.
 
-### Grading: 
+### Grading
 
 In accordance with University policy, all students are encouraged to attend every class period.  While the lecture content will nominally follow the assigned texts and powerpoint slides, students are responsible for information disseminated in the lectures, though not necessarily covered in the text.
 
@@ -144,46 +148,48 @@ Students can choose between two grading options:
 
 Option I: An initial grade based on 500 total points will be assigned after the third exam.  If the student is satisfied with this grade, then the Final Exam is not required.
 
-```
-			3 exams                     =   300 points 
-			homework                    =   150 points 
-			final project               =   25  points
-			quizzes	 + muddiest points  =   25  points 
-			Total                           500 points
+``` md
+   3 exams                     =   300 points 
+   homework                    =   150 points 
+   final project               =   25  points
+   quizzes  + muddiest points  =   25  points 
+   Total                           500 points
 ```
 
 Option II: If the student is not satisfied with the Option I grade, a final exam (comprehensive) may be taken.  In this case, the grade will be based on 650 total points.  The percentage score required to achieve each grade will be identical to that used for Option I.
 
-```
-			3 exams                     =   300 points 
-			homework                    =   150 points 
-			final project               =   25  points
-			quizzes	 + muddiest points  =   25  points 
-			final exam                  =   150 points
-			Total                           650 points
+``` md
+   3 exams                     =   300 points 
+   homework                    =   150 points 
+   final project               =   25  points
+   quizzes  + muddiest points  =   25  points 
+   final exam                  =   150 points
+   Total                           650 points
 ```
 
-The number of homework assignments and quizzes may vary depending on the number of cellphone calls and similar disruptions. If, at the end of the semester, the homework or quiz points don’t add up to the total of 150 points or 25 points respectively, then unused points will be given to the students as automatic full credit. If the total of points is larger than the totals listed above, then the totals will be multiplied by a fraction such that the re-scaled values match the total points above.
+The homework is generally one assignment per week for each of the 15 weeks - note that, because Thanksgiving has no assignment, the first week will effectively have 2 assignments. The number quizzes may vary depending on the number of cellphone calls and similar disruptions, as each disruption results in one quiz. If, at the end of the semester, the homework or quiz points don’t add up to the total in these categories, then unused points will be given to the students as automatic full credit. If the total of points is larger than the totals listed above, then the totals will be multiplied by a fraction such that the re-scaled values match the total points above.
 
-### Textbook:	
+### Textbook
+
 There is not a required textbook, but students must have access to the MATLAB software suite, the Student Edition… You can find this software at all campus bookstores, at any of the campus computer labs, etc. The price is about $100 for a student license. Note: industry engineers have to pay about $30k for the same software after they graduate. So valuable are the student editions of MATLAB that many engineers keep their software throughout their careers.
 
-### Other Good References:	
+### Other Good References
+
 Gillespie, Thomas. Fundamentals of Vehicle Dynamics. Society of Automotive Engineers, Inc. This is a good starter book for anyone new to vehicle dynamics, and as the title suggests - is a core reference for fundamentals. But for those really interested in vehicle dynamics, the text may leave one wanting for more depth. This book was the class text from 2004-2007.
 
-Tires, Suspension, and Handling 2nd Edition by John C. Dixon, SAE Press, ISBN 1-56091-831-4, 1996. This is not a comprehensive book covering every aspect of vehicle dynamics, but it has some of the best material on transient handling response and suspension design; this seems to be a primary interest area of students in the course, particularly those on the racing teams. This book was used it as the class text from 2007-2010.	
+Tires, Suspension, and Handling 2nd Edition by John C. Dixon, SAE Press, ISBN 1-56091-831-4, 1996. This is not a comprehensive book covering every aspect of vehicle dynamics, but it has some of the best material on transient handling response and suspension design; this seems to be a primary interest area of students in the course, particularly those on the racing teams. This book was used it as the class text from 2007-2010.
 
 Tire and Vehicle Dynamics, by Hans B. Pacejka, published by the Society of Automotive Engineers, Inc.2002. This is a definitive book on tire modeling with a solid, but terse treatment of vehicle dynamics. Because this book obtains its depth too quickly for most undergraduates to understand, it is not appropriate for beginners or as a first book on vehicle dynamics. It has good nuggets for those familiar with the material and is a great must-read text for graduate students working in tire dynamics and tire modeling.
 
 Wong, J.Y., Theory of Ground Vehicles, Second or Third Edition, John Wiley, 1997. Another good “beginner book” that is often suggested in lieu of Gillespie. Its treatment of ground forces and tracked vehicles is among the best introductions to applying vehicle dynamics to ground robots including tracked vehicles. Thus, this is among the best textbooks on non-traditional vehicles (such as tanks) that is presently available.
 
-Bosch Automotive Handbook, 8th edition, BOSCH GmbH, 2011. It remains a great reference for all types of automotive systems, components, and engineering principles. Unfortunately, it is organized to almostly solely be a reference, not a textbook to teach vehicle dynamics. 
+Bosch Automotive Handbook, 8th edition, BOSCH GmbH, 2011. It remains a great reference for all types of automotive systems, components, and engineering principles. Unfortunately, it is organized to almostly solely be a reference, not a textbook to teach vehicle dynamics.
 
 Vehicle Stability by Karnopp. This is a among the best books on vehicle stability analysis, and is one of the few books on vehicle dynamics on this list that is clearly graduate-level. However, like the title says, the focus is on stability and little else. This is a critical and core issue, but the class covers much more beyond just this issue.
 
 Milliken and Milliken, Race Car Vehicle Dynamics. This book provides great coverage of vehicle setup, especially for racing and transient handling, and is considered one of the “must read” books for those working in vehicle dynamics. However, for a semester-long course, the material is far too detailed for a beginning student. It's focus on racing can over-emphasize design issues that do not well describe core issues in the design and operation of production vehicles. As well, it takes a good chunk of time to navigate through the tremendous amount of material they provide. This is a book that one must almost have to be an expert in vehicle dynamics first in order to understand the nuances within. It is very easy with this book to confuse a minor detail with a primary effect, and beginners are not encouraged to start with this book.
 
-J.R. Ellis, Vehicle Handling Dynamics, Mechanical Engineering Publication Limited, London, 1993. A strong book, but one that was hard to obtain when the class was formed and thus not used extensively. 
+J.R. Ellis, Vehicle Handling Dynamics, Mechanical Engineering Publication Limited, London, 1993. A strong book, but one that was hard to obtain when the class was formed and thus not used extensively.
 
 Automotive Engineering Fundamentals, Richard Stone and Jeffrey Ball, 2004. This is a great “all around” book, covering everything from chassis to powertrain to aerodynamics. It does not get into enough depth into any one area to be the key reference for any topic, but this is a book that I reach for (with Gillespie) to train someone to understand vehicle design generally, in just one book. This is one of the books to buy if you want to have an introduction to most everything, in a way that is accessible to undergrad engineers. This book was the core text for the course in 2008-2010.
 
@@ -195,55 +201,62 @@ Vehicle Dynamics. by Reza N. Jazar, Springer. This is quite a heft of a book (a 
 
 CarSim Educational UMTRI – The University of Michigan Transportation Institute and MSC – Mechanical Simulation Corporation, July 1997. This software is sometimes installed in the MNE computer labs, and might be used for some of the homework assignments. This software is VERY expensive but is production-grade quality used by industry. Because the goal of the course is for students to understand what is within the software to a level they can write their own, students are encouraged to master the dynamics of vehicles using their own codes up to a level where they appreciate the nuance and additional details added by this professional software. Jumping into this software without this understanding can cause students to misinterpret vehicle results and confuse primary dynamics with secondary effects. Or worse, the software results may be incorrectly trusted because core simulation assumptions and implementations would be unchallenged by novice users.
 
-### Homework:	
-Short homework assignments will be given over the entire semester, roughly one assignment per lecture (the assignment will go with the lecture material).  Homework problems will be due one week after the completion of the lecture topic at the beginning of class, since I sometimes present the solutions in class. Late homework assignments will be docked 20% for the first class period that it is late, but will not be accepted for more than 1 class period after the due date. If we discuss or post the solutions, then no submissions will be accepted thereafter; this typically happens around exam dates.
+### Homework
+
+Short homework assignments will be given over the entire semester, roughly one assignment per lecture (the assignment will go with the lecture material).  Homework problems will be due one week after the completion of the lecture topic at the beginning of class, since I sometimes present the solutions in class. Late homework assignments will be docked 20% for the first class period that it is late, but will not be accepted for more than 1 class period after the due date. If we discuss or post the solutions, then no submissions will be accepted thereafter; this typically happens around exam dates or 2 weeks after an assignment is due, whichever is sooner.
 
 To make the due dates very clear, the due dates will be listed as each assignment is posted.
-	
-Neatness counts – illegible and otherwise unprofessional solutions will be penalized at the discretion of the grader.  
 
-### Questions:	
+### Questions
+
 Please feel free to ask questions before, during, or after class, since this saves E-mail exchanges, scheduled meetings, etc. E-mail works as well, and if the question is good, they may be posted here to this repo.
 
 But one key request: include a hypothesis. In other words, don’t simply ask “What do I do here?” or “What do you mean?” or “I don’t understand…”. Instead, write, “I think you mean X here, is this correct?” or, “I think I should do Y, right?”  A good question is one where we can reply with a yes or no answer (or a number), since this shows that you have a good understanding of both the material, and what type of answer you want.
 
 Finally, the homework is meant to challenge but not overwhelm. So don’t spend hours banging your head against a wall, especially on a software issue. If you aren’t getting anywhere after a reasonable effort (20-30 minutes is a reasonable amount of time to work on a problem section), please just ask!
 
-### Quizzes:	
-Short quizzes (5 minutes each) will be given over the semester based on assigned reading from the text or other supplemental material provided in class.  Each quiz will be worth 3 points and will be given unannounced at the beginning of class.  Because the purpose of this quiz is to ensure that students arrive to class on time, no makeup quizzes will be allowed. 
+### Quizzes
 
-In the case a cell phone, pager, buzzer, etc. goes off in class, there will be an automatic on-the-spot pop quiz. 
+Short quizzes (5 minutes each) will be given over the semester based on assigned reading from the text or other supplemental material provided in class.  Each quiz will be worth 3 points and will be given unannounced at the beginning of class.  Because the purpose of this quiz is to ensure that students arrive to class on time, no makeup quizzes will be allowed.
 
-### Muddiest points:	
+In the case a cell phone, pager, buzzer, etc. goes off in class, there will be an automatic on-the-spot pop quiz.
+
+### Muddiest points
+
 At unannounced times at the end of class, all students will be asked to write out a short (1-2 sentence) question concerning a topic covered in class that week that they felt was not well-explained or remains unclear.  These are like quizzes, but are only graded pass/fail and there are no wrong answers.  At the beginning of the following class, the most commonly asked questions will usually be discussed.  No makeup muddiest points will be allowed.
 
-### Exams:	
+### Exams
+
 Exams are be based on material from the textbook, assigned readings, lecture notes, and homework, with particular focus on lecture topics.  Unless otherwise specified, exams are closed-book, closed-notes.  Makeup exams will only be arranged for students with valid excuses provided at least one class period before the scheduled exam.  If students have a valid conflict, please let the professor know as soon as possible.  
 
 Exams will be held roughly after Lessons 12, 24, and 36 and correspond to first, middle, and final thirds of the class. Exact dates are not given due to snow days, travel, and test track events, but usually happen on the Tuesday or Thursday evenings the week after the above lessons are completed.
 
 Example exams are posted on this repo site.
-	
-### Potluck:	
-Students will have the opportunity to choose (vote) the curriculum near the end of the semester.  Potluck topics include: 
-1.	Driver behavior and vehicle/driver interaction
-2.	Vehicle Automation
-3.	Powertrain design: dynamic considerations
-4.	Student choice!
 
+### Potluck
 
-### Final exam:	
+Students will have the opportunity to choose (vote) the curriculum near the end of the semester.  Potluck topics include:
+
+1. Driver behavior and vehicle/driver interaction
+2. Vehicle Automation
+3. Powertrain design: dynamic considerations
+4. Student choice!
+
+### Final exam
+
 The final exam is optional (see Option II above) and comprehensive.  The date and time of the exam is determined around mid-semester by the registrar.
 
-### Missing class:	
-If a student is going to miss class, please tell Dr. Brennan via E-mail at least 24 hours in advance. These are usually excused as long as the reason is something your employer would allow as "professional development" if you had a job. So job interviews, grad school visits, senior project trips are valid excuses; getting a better flight on Thanksgiving is not. In the student E-mail, students should list the specific dates, their name, and the class (ME 452). Faculty may teach 3 to 5 different classes simultaneously and most faculty get dozens to hundreds of emails a day and thus may go several days before being able to check all messages. So an e-mail from SteelerFan23@gmail.com saying “I’m missing class tomorrow” isn’t helpful at all in identifying the student, class, or date being missed.
+### Missing class
 
-### Policy on cheating:	
+If a student is going to miss class, please tell Dr. Brennan via E-mail at least 24 hours in advance. These are usually excused as long as the reason is something your employer would allow as "professional development" if you had a job. So job interviews, grad school visits, senior project trips are valid excuses; getting a better flight on Thanksgiving is not. In the student E-mail, students should list the specific dates, their name, and the class (ME 452). Faculty may teach 3 to 5 different classes simultaneously and most faculty get dozens to hundreds of emails a day and thus may go several days before being able to check all messages. So an e-mail from <SteelerFan23@gmail.com> saying “I’m missing class tomorrow” isn’t helpful at all in identifying the student, class, or date being missed.
+
+### Policy on cheating
+
 Standard (required) statement: The University defines academic integrity as the pursuit of scholarly activity in an open, honest and responsible manner. All students should act with personal integrity, respect other students' dignity, rights and property, and help create and maintain an environment in which all can succeed through the fruits of their efforts - refer to Senate Policy 49-20. Dishonesty of any kind will not be tolerated in this course. Dishonesty includes, but is not limited to, cheating, plagiarizing, fabricating information or citations, facilitating acts of academic dishonesty by others, having unauthorized possession of examinations, submitting work of another person or work previously used without informing the instructor, or tampering with the academic work of other students. Students who are found to be dishonest will receive academic sanctions and will be reported to the University's Office of Student Conduct for possible further disciplinary sanctions (refer to Senate Policy G-9).
 
 Specific to this class:  Students are encouraged to work together on homework assignments; however, original solutions are required.  
 
-So how do we expect students to balance “working together” with “original solutions”? For homework, the threshold of cheating is defined as follows: if the person grading the assignments is able to identify which students have worked together by their solutions or specific aspects of their solution approach, and their interaction is NOT clearly documented on the solutions (“I obtained the following equation from Mary”), then these students are working too closely together.   
+So how do we expect students to balance “working together” with “original solutions”? For homework, the threshold of cheating is defined as follows: if the person grading the assignments is able to identify which students have worked together by their solutions or specific aspects of their solution approach, and their interaction is NOT clearly documented on the solutions (“I obtained the following equation from Mary”), then these students are working too closely together.
 
 If cheating or copying is suspected, all students involved will receive a warning if the violation is minor and if this is their first such warning. For obvious and major violations, e.g. major portions of the assignment are copied (such as simulations), then no credit will be given for the assignment to all students involved.  After the first warning, any subsequent cheating – minor or major – will result in a zero for the entire assignment and the student will be referred to the college for an academic integrity violation. Three cheating events will result in failing the class.
 
@@ -251,12 +264,26 @@ Again, note that we tend to be far more forgiving of issues if teamwork is docum
 
 Cheating of any kind on exams will not be tolerated and will be immediately processed as an academic integrity violation.
 
-### Students with Diabilities: 
-Penn State welcomes students with disabilities into the University's educational programs. If you have a disability-related need for reasonable academic adjustments in this course, contact the Office for Disability Services (ODS) at 814-863-1807 (V/TTY). For further information regarding ODS, please visit the Office for Disability Services Web site at http://equity.psu.edu/ods/. In order to receive consideration for course accommodations, you must contact ODS and request academic adjustment letters at the beginning of each semester. See: http://equity.psu.edu/ods/guidelines/documentation-guidelines 
+### Students with Diabilities
+
+Penn State welcomes students with disabilities into the University's educational programs. If you have a disability-related need for reasonable academic adjustments in this course, contact the Office for Disability Services (ODS) at 814-863-1807 (V/TTY). For further information regarding ODS, please visit the Office for Disability Services Web site at <http://equity.psu.edu/ods/>. In order to receive consideration for course accommodations, you must contact ODS and request academic adjustment letters at the beginning of each semester. See: <http://equity.psu.edu/ods/guidelines/documentation-guidelines>
 
 Of note: exams are not time restricted, so there is no need to present time accomodation requests for the class - all students have whatever time they need to complete their exams.
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
+
+### Classroom Safety
+
+Building Evacuation
+If you need to evacuate the building, know the location of at least two exits and follow posted evacuation routes - in general, the exits are at each end of every hallway segment. If and when an evacuation is announced, remain calm, leave the building promptly, and follow instructions from emergency personnel. Do not use elevators during a fire or other emergency unless directed to do so. Once outside, move away from the building and proceed to the designated assembly area, if one has been identified. Do not re-enter the building until emergency personnel indicate that it is safe to do so.
+
+Active Shooter / Armed Threat
+Follow RUN-HIDE-FIGHT rule. If there is an active shooter or other armed threat, your first priority is to protect yourself and get to a safe location. If it is safe to do so, leave the area and move as far away from the threat as possible. If you cannot safely leave, find a secure location, lock or barricade the door if possible, silence electronic devices, and remain quiet. As a last resort, if you are confronted by the attacker and your life is in imminent danger, be prepared to defend yourself. Follow instructions from law enforcement and emergency personnel when they arrive. Please review this: <https://www.police.psu.edu/run-hide-fight-surviving-active-attacker>
+
+General Emergencies
+For general emergencies, remain calm and follow instructions from university officials, emergency personnel, and campus alerts. Depending on the situation, you may be instructed to evacuate, shelter in place, or take other protective action. Be aware of your surroundings and know how to report an emergency. If you are able to do so safely, assist others who may need help. Additional emergency procedures and resources are available through the university's emergency preparedness and safety resources (see information at: <https://www.police.psu.edu/emergency-preparedness>)
+
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -272,13 +299,13 @@ To get a local copy up and running follow these simple steps.
 2. Clone the repo
 
    ```sh
-   git clone https://github.com/ivsg-psu/Classes_VehicleDynamics_2026Spring
+   git clone https://github.com/ivsg-psu/Classes_VehicleDynamics_2026Fall
    ```
 
 3. Run the main code in the root of the folder (script_demo_Laps.m), this will download the required utilities for this code, unzip the zip files into a Utilities folder (.\Utilities), and update the MATLAB path to include the Utility locations. This install process will only occur the first time. Note: to force the install to occur again, delete the Utilities directory and clear all global variables in MATLAB (type: "clear global *").
 4. Confirm it works! Run script_demo_Laps. If the code works, the script should run without errors. This script produces numerous example images such as those in this README file.
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -292,7 +319,7 @@ The following are the top level directories within the repository:
  <li>/Utilities folder: Dependencies that are utilized but not implemented in this repository are placed in the Utilities directory. These can be single files but are most often folders containing other cloned repositories.</li>
 </ul>
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -306,7 +333,7 @@ The following are the top level directories within the repository:
 
     For ease of getting started, the zip files of the directories used - without the .git repo information, to keep them small - are included in this repo.
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -324,7 +351,7 @@ The function fcn_Laps_plotLapsXY plots the laps. For example, the function was u
   <!--font size="-2">Photo by <a href="https://unsplash.com/ko/@samuelchenard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samuel Chenard</a> on <a href="https://unsplash.com/photos/Bdc8uzY9EPw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></font -->
 </pre>
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -338,7 +365,7 @@ The function fcn_Laps_fillSampleLaps creates dummy data to test lap functions. T
   <!--font size="-2">Photo by <a href="https://unsplash.com/ko/@samuelchenard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samuel Chenard</a> on <a href="https://unsplash.com/photos/Bdc8uzY9EPw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></font -->
 </pre>
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -352,7 +379,7 @@ The function fcn_Laps_plotZoneDefinition plots any type of zone, allowing user-d
   <!--font size="-2">Photo by <a href="https://unsplash.com/ko/@samuelchenard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samuel Chenard</a> on <a href="https://unsplash.com/photos/Bdc8uzY9EPw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></font -->
 </pre>
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -366,7 +393,7 @@ The function fcn_Laps_plotSegmentZoneDefinition plots a segment zone, allowing u
   <!--font size="-2">Photo by <a href="https://unsplash.com/ko/@samuelchenard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samuel Chenard</a> on <a href="https://unsplash.com/photos/Bdc8uzY9EPw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></font>
 </pre -->
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -382,7 +409,7 @@ The function fcn_Laps_breakDataIntoLaps is the core function for this repo that 
   <!--font size="-2">Photo by <a href="https://unsplash.com/ko/@samuelchenard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samuel Chenard</a> on <a href="https://unsplash.com/photos/Bdc8uzY9EPw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></font -->
 </pre>
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -396,7 +423,7 @@ The function fcn_Laps_checkZoneType supports fcn_Laps_breakDataIntoLaps by check
   <!--font size="-2">Photo by <a href="https://unsplash.com/ko/@samuelchenard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samuel Chenard</a> on <a href="https://unsplash.com/photos/Bdc8uzY9EPw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></font>
 </pre-->
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -410,7 +437,7 @@ The function fcn_Laps_breakDataIntoLapIndices is a more advanced version of fcn_
   <!--font size="-2">Photo by <a href="https://unsplash.com/ko/@samuelchenard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samuel Chenard</a> on <a href="https://unsplash.com/photos/Bdc8uzY9EPw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></font -->
 </pre>
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -424,7 +451,7 @@ The function fcn_Laps_findSegmentZoneStartStop is a supporting function that fin
   <!--font size="-2">Photo by <a href="https://unsplash.com/ko/@samuelchenard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samuel Chenard</a> on <a href="https://unsplash.com/photos/Bdc8uzY9EPw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></font -->
 </pre>
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -438,7 +465,7 @@ The function fcn_Laps_findPointZoneStartStopAndMinimum is a supporting function 
   <!--font size="-2">Photo by <a href="https://unsplash.com/ko/@samuelchenard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samuel Chenard</a> on <a href="https://unsplash.com/photos/Bdc8uzY9EPw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></font -->
 </pre>
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -466,7 +493,7 @@ help fcn_fcnname
 
 for any function to view function details.
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -482,7 +509,7 @@ for any function to view function details.
 
 2. After running the main script to define the included directories for utility functions, one can then navigate to the Functions directory and run any of the functions or scripts there as well. All functions for this library are found in the Functions sub-folder, and each has an associated test script. Run any of the various test scripts; each can work as a stand-alone script.
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -518,7 +545,7 @@ Why is an excursion point needed? Consider an example: it is common for the star
 
   requires 3 points to occur within the start zone area.
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -527,7 +554,7 @@ Why is an excursion point needed? Consider an example: it is common for the star
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -535,7 +562,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 This code is still in development (alpha testing)
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
@@ -544,9 +571,9 @@ This code is still in development (alpha testing)
 
 Sean Brennan - [sbrennan@psu.edu](sbrennan@psu.edu)
 
-Project Link: [hhttps://github.com/ivsg-psu/Classes_VehicleDynamics_2026Spring](https://github.com/ivsg-psu/Classes_VehicleDynamics_2026Spring)
+Project Link: [hhttps://github.com/ivsg-psu/Classes_VehicleDynamics_2026Fall](https://github.com/ivsg-psu/Classes_VehicleDynamics_2026Fall)
 
-<a href="#classes_vehicledynamics_2026spring">Back to top</a>
+<a href="#classes_vehicledynamics_2026fall">Back to top</a>
 
 ***
 
