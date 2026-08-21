@@ -90,7 +90,7 @@ MWF 2:30-3:20 pm
 Earth and Eng Sciences 121
 Aug 24, 2026 - Dec 11, 2026
 
-### Instructor
+### Instructor Content Information
 
 Dr. Sean Brennan
 Office:  227 Reber Building
@@ -104,15 +104,13 @@ Email:  <sbrennan@psu.edu>
 * NOTE: this is the same address as <snb10@psu.edu>, just easier to remember and less likely to confuse zeros and ones with letters
 * NOTE: Please do NOT send urgent messages to the professor or the TA via Canvas. Canvas maintains its own internal email capability that does not support basic email operations - forwarding, CC other students, keyword search, automatic rules, etc. This makes it very difficult to reply quickly. In our main email, we look for the keyword "452" so please be sure this is in the subject line.
 
-### Office hours
-
-Thursdays on Zoom from 3pm to 5pm
+Office hours are Thursdays on Zoom from 3pm to 5pm
 
 ### Course TA
 
-TBD
+There is typically no TA for this course
 
-### Topics
+### Course Description
 
 This course conducts investigations of one-dimensional, two-dimensional, and three-dimensional dynamics, kinematics, and design - each integrated into the study of vehicle dynamics. Topics include body kinematics, steady state body dynamics, transient stability, tire forces, suspension, automatic control, and driver interaction. The emphasis is on the analysis of a vehicle as a complex system, recognizing how to abstract observed behaviors into appropriate mathematical models, how to decompose behaviors into subsystems, how to construct and perform numerical simulations, and how to design and analyze experiments to test models and simulations to gain insights into design goals and tradeoffs.  
 
@@ -126,7 +124,7 @@ Nearly all assignments will require the use of MATLAB and deep knowledge of this
 
 And one final note on prerequisites: students are NOT expected to be “gearheads” to both enjoy this course and be very successful academically! Indeed, one observation is that hobby-level knowledge is often wrong or situationally specific, and some students may have trouble with “unlearning” material that is incorrect or that is only valid for racecars, not passenger vehicles.
 
-### Detailed Course Objectives  
+### Course Goals and Measurable Objectives 
 
 Upon completion of the course, students should be able to:
 
@@ -140,13 +138,21 @@ Upon completion of the course, students should be able to:
 8. Justify existing tradeoffs in model simplicity or complexity in representing an actual system. By examination of the vehicle system behavior, students are expected to form and justify mathematical model representations of suitable complexity, even extending this to new systems and situations.
 9. Understand and characterize how automated subsystems such as ABS, rear-wheel steering, and active suspension will change vehicle performance and vehicle/roadway interaction.
 
-### Grading
+### Attendance and Make-up Policy
 
 In accordance with University policy, all students are encouraged to attend every class period.  While the lecture content will nominally follow the assigned texts and powerpoint slides, students are responsible for information disseminated in the lectures, though not necessarily covered in the text.
 
+If there are a large number of students missing in class, it is common that an in-class quiz will be given.
+
+If a student is going to miss class, please tell Dr. Brennan via E-mail at least 24 hours in advance. These are usually excused as long as the reason is something your employer would allow as "professional development" if you had a job. So job interviews, grad school visits, senior project trips are valid excuses; getting a better flight on Thanksgiving is not a valid reason to miss the Friday before Thanksgiving week or the Monday afterwards.
+
+In the student E-mail, students should list the specific dates, their name, and the class (ME 452). Faculty may teach 3 to 5 different classes simultaneously and most faculty get dozens to hundreds of emails a day and thus may go several days before being able to check all messages. So an e-mail from <SteelerFan23@gmail.com> saying “I’m missing class tomorrow” isn’t helpful at all in identifying the student, class, or date being missed.
+
+### Course assessment policy
+
 Students can choose between two grading options:
 
-Option I: An initial grade based on 500 total points will be assigned after the third exam.  If the student is satisfied with this grade, then the Final Exam is not required.
+The final grade is based on 500 total points will be assigned after the third exam.  
 
 ``` md
    3 exams                     =   300 points 
@@ -156,24 +162,33 @@ Option I: An initial grade based on 500 total points will be assigned after the 
    Total                           500 points
 ```
 
-Option II: If the student is not satisfied with the Option I grade, a final exam (comprehensive) may be taken.  In this case, the grade will be based on 650 total points.  The percentage score required to achieve each grade will be identical to that used for Option I.
-
-``` md
-   3 exams                     =   300 points 
-   homework                    =   150 points 
-   final project               =   25  points
-   quizzes  + muddiest points  =   25  points 
-   final exam                  =   150 points
-   Total                           650 points
-```
-
 The homework is generally one assignment per week for each of the 15 weeks - note that, because Thanksgiving has no assignment, the first week will effectively have 2 assignments. The number quizzes may vary depending on the number of cellphone calls and similar disruptions, as each disruption results in one quiz. If, at the end of the semester, the homework or quiz points don’t add up to the total in these categories, then unused points will be given to the students as automatic full credit. If the total of points is larger than the totals listed above, then the totals will be multiplied by a fraction such that the re-scaled values match the total points above.
 
-### Textbook
+Short homework assignments will be given over the entire semester, roughly one assignment per lecture (the assignment will go with the lecture material).  Homework problems will be due one week after the completion of the lecture topic at the beginning of class, since I sometimes present the solutions in class. Late homework assignments will be docked 20% for the first class period that it is late, but will not be accepted for more than 1 class period after the due date. If we discuss or post the solutions, then no submissions will be accepted thereafter; this typically happens around exam dates or 2 weeks after an assignment is due, whichever is sooner.
 
-There is not a required textbook, but students must have access to the MATLAB software suite, the Student Edition… You can find this software at all campus bookstores, at any of the campus computer labs, etc. The price is about $100 for a student license. Note: industry engineers have to pay about $30k for the same software after they graduate. So valuable are the student editions of MATLAB that many engineers keep their software throughout their careers.
+To make the due dates very clear, the due dates will be listed as each assignment is posted.
 
-### Other Good References
+Short quizzes (5 minutes each) will be given over the semester based on assigned reading from the text or other supplemental material provided in class.  Each quiz will be worth 3 points and will be given unannounced at the beginning of class.  Because the purpose of this quiz is to ensure that students arrive to class on time, no makeup quizzes will be allowed.
+
+In the case a cell phone, pager, buzzer, etc. goes off in class, there will be an automatic on-the-spot pop quiz.
+
+This class uses at times a special type of quiz: Muddiest points. At unannounced times at the end of class, all students will be asked to write out a short (1-2 sentence) question concerning a topic covered in class that week that they felt was not well-explained or remains unclear.  These are like quizzes, but are only graded pass/fail and there are no wrong answers - students who do the Muddiest Points always recieve full points, even if the submission is a blank page with their name at top.  At the beginning of the following class, the most commonly asked questions will usually be discussed.  No makeup muddiest points will be allowed.
+
+Exams are be based on material from the class discussions, lecture notes, and homework, with particular but not exclusive focus on lecture topics.  Unless otherwise specified, exams are closed-book, closed-notes. Students using AI tools or external chat features will automatically receive a zero.  Makeup exams will only be arranged for students with valid excuses provided at least one class period before the scheduled exam.  If students have a known conflict, please let the professor know as soon as possible - usually, several make-up exam times are available.  
+
+Exams will be held roughly after Lessons 12, 24, and 36 and correspond to first, middle, and final thirds of the class. Exact dates are not given due to snow days, travel, and test track events, but usually happen on the Tuesday or Thursday evenings the week after the above lessons are completed.
+
+Example exams are posted on this repo site.
+
+### Required Course Materials
+
+There is not a required textbook, but students must have access to the MATLAB software suite, the Student Edition… Students can find this software at all campus bookstores, at any of the campus computer labs, etc. The price is about $100 for a student license. Note: industry engineers have to pay about $30k for the same software after they graduate. So valuable are the student editions of MATLAB that many engineers keep their software throughout their careers.
+
+It is also helpful - but not required - that students have a laptop that can be used in class to program MATLAB and interact with Canvas. If a student does not have this access, the professor can bring spare laptops to the class.
+
+### Non-required Course References
+
+The following references have either been past textbooks in the class or serve well as good references. Students who plan careers in this field are strongly encouraged to collect and read these materials as they are classics in this field:
 
 Gillespie, Thomas. Fundamentals of Vehicle Dynamics. Society of Automotive Engineers, Inc. This is a good starter book for anyone new to vehicle dynamics, and as the title suggests - is a core reference for fundamentals. But for those really interested in vehicle dynamics, the text may leave one wanting for more depth. This book was the class text from 2004-2007.
 
@@ -201,12 +216,6 @@ Vehicle Dynamics. by Reza N. Jazar, Springer. This is quite a heft of a book (a 
 
 CarSim Educational UMTRI – The University of Michigan Transportation Institute and MSC – Mechanical Simulation Corporation, July 1997. This software is sometimes installed in the MNE computer labs, and might be used for some of the homework assignments. This software is VERY expensive but is production-grade quality used by industry. Because the goal of the course is for students to understand what is within the software to a level they can write their own, students are encouraged to master the dynamics of vehicles using their own codes up to a level where they appreciate the nuance and additional details added by this professional software. Jumping into this software without this understanding can cause students to misinterpret vehicle results and confuse primary dynamics with secondary effects. Or worse, the software results may be incorrectly trusted because core simulation assumptions and implementations would be unchallenged by novice users.
 
-### Homework
-
-Short homework assignments will be given over the entire semester, roughly one assignment per lecture (the assignment will go with the lecture material).  Homework problems will be due one week after the completion of the lecture topic at the beginning of class, since I sometimes present the solutions in class. Late homework assignments will be docked 20% for the first class period that it is late, but will not be accepted for more than 1 class period after the due date. If we discuss or post the solutions, then no submissions will be accepted thereafter; this typically happens around exam dates or 2 weeks after an assignment is due, whichever is sooner.
-
-To make the due dates very clear, the due dates will be listed as each assignment is posted.
-
 ### Questions
 
 Please feel free to ask questions before, during, or after class, since this saves E-mail exchanges, scheduled meetings, etc. E-mail works as well, and if the question is good, they may be posted here to this repo.
@@ -214,24 +223,6 @@ Please feel free to ask questions before, during, or after class, since this sav
 But one key request: include a hypothesis. In other words, don’t simply ask “What do I do here?” or “What do you mean?” or “I don’t understand…”. Instead, write, “I think you mean X here, is this correct?” or, “I think I should do Y, right?”  A good question is one where we can reply with a yes or no answer (or a number), since this shows that you have a good understanding of both the material, and what type of answer you want.
 
 Finally, the homework is meant to challenge but not overwhelm. So don’t spend hours banging your head against a wall, especially on a software issue. If you aren’t getting anywhere after a reasonable effort (20-30 minutes is a reasonable amount of time to work on a problem section), please just ask!
-
-### Quizzes
-
-Short quizzes (5 minutes each) will be given over the semester based on assigned reading from the text or other supplemental material provided in class.  Each quiz will be worth 3 points and will be given unannounced at the beginning of class.  Because the purpose of this quiz is to ensure that students arrive to class on time, no makeup quizzes will be allowed.
-
-In the case a cell phone, pager, buzzer, etc. goes off in class, there will be an automatic on-the-spot pop quiz.
-
-### Muddiest points
-
-At unannounced times at the end of class, all students will be asked to write out a short (1-2 sentence) question concerning a topic covered in class that week that they felt was not well-explained or remains unclear.  These are like quizzes, but are only graded pass/fail and there are no wrong answers.  At the beginning of the following class, the most commonly asked questions will usually be discussed.  No makeup muddiest points will be allowed.
-
-### Exams
-
-Exams are be based on material from the textbook, assigned readings, lecture notes, and homework, with particular focus on lecture topics.  Unless otherwise specified, exams are closed-book, closed-notes.  Makeup exams will only be arranged for students with valid excuses provided at least one class period before the scheduled exam.  If students have a valid conflict, please let the professor know as soon as possible.  
-
-Exams will be held roughly after Lessons 12, 24, and 36 and correspond to first, middle, and final thirds of the class. Exact dates are not given due to snow days, travel, and test track events, but usually happen on the Tuesday or Thursday evenings the week after the above lessons are completed.
-
-Example exams are posted on this repo site.
 
 ### Potluck
 
@@ -246,11 +237,7 @@ Students will have the opportunity to choose (vote) the curriculum near the end 
 
 The final exam is optional (see Option II above) and comprehensive.  The date and time of the exam is determined around mid-semester by the registrar.
 
-### Missing class
-
-If a student is going to miss class, please tell Dr. Brennan via E-mail at least 24 hours in advance. These are usually excused as long as the reason is something your employer would allow as "professional development" if you had a job. So job interviews, grad school visits, senior project trips are valid excuses; getting a better flight on Thanksgiving is not. In the student E-mail, students should list the specific dates, their name, and the class (ME 452). Faculty may teach 3 to 5 different classes simultaneously and most faculty get dozens to hundreds of emails a day and thus may go several days before being able to check all messages. So an e-mail from <SteelerFan23@gmail.com> saying “I’m missing class tomorrow” isn’t helpful at all in identifying the student, class, or date being missed.
-
-### Policy on cheating
+### Academic Integrity Statement
 
 Standard (required) statement: The University defines academic integrity as the pursuit of scholarly activity in an open, honest and responsible manner. All students should act with personal integrity, respect other students' dignity, rights and property, and help create and maintain an environment in which all can succeed through the fruits of their efforts - refer to Senate Policy 49-20. Dishonesty of any kind will not be tolerated in this course. Dishonesty includes, but is not limited to, cheating, plagiarizing, fabricating information or citations, facilitating acts of academic dishonesty by others, having unauthorized possession of examinations, submitting work of another person or work previously used without informing the instructor, or tampering with the academic work of other students. Students who are found to be dishonest will receive academic sanctions and will be reported to the University's Office of Student Conduct for possible further disciplinary sanctions (refer to Senate Policy G-9).
 
@@ -263,6 +250,10 @@ If cheating or copying is suspected, all students involved will receive a warnin
 Again, note that we tend to be far more forgiving of issues if teamwork is documented, e.g. “Mary helped me with my simulation block representing the coordinate transforms.” Vague documentation such as “Mary helped me” is better than nothing but may still result in a zero for you (but not Mary) if that help is not specifically documented, and it seems like you didn’t do anything but use Mary’s simulation. But if a student clearly used Mary's work without documenting it, but the student and Mary will both receive a zero grade
 
 Cheating of any kind on exams will not be tolerated and will be immediately processed as an academic integrity violation.
+
+### Course-specific AI Statement
+
+Students are strongly encouraged to use AI tools as much as possible with the exception of during exams or quizzes. As well, students may be trained to develop AI prompts and are encouraged to teach others and the professor any best practices, tools, tricks, etc. that apply to the course.
 
 ### Students with Diabilities
 
