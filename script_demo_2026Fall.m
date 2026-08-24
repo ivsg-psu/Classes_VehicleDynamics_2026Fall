@@ -12,26 +12,22 @@
 % sbrennan@psu.edu
 %
 % The purpose of the code is deploy content - assignments, presentations,
-% documents, codes - in support of the 2026 Vehicle Dynamics course.
+% documents, codes - in support of the Penn State Vehicle Dynamics course.
+%
+% Of note: main assignments are in "p-code" form - not editable. These are
+% maintained by Dr. Brennan in the VDCore library which only he has access.
 
 % REVISION HISTORY:
 % 
-% 2026_01_12 by Sean Brennan, sbrennan@psu.edu
-% - First edit of the repo from the "Laps" library template
-%
-% 2026_02_12 by Sean Brennan, sbrennan@psu.edu
-% - Cleanup of incorrect code pushed in by prior students, 
-% - In script_demo_VD2026
-%   % * Added automatic creation of StudentWork folder
-%
-% 2026_02_20 by Sean Brennan, sbrennan@psu.edu
+% 2026_08_24 by Sean Brennan, sbrennan@psu.edu
+% - First edit of the repo from the 2026 Spring template
 % - In script_demo_2026Spring.m
-%   % * Renamed to avoid confusion with VD subrepo
+%   % * Deleted repeat calls to PathPlanning_GeomTools_GeomClassLibrary
 
 
 % TO-DO:
-% - 2026_01_12 by Sean Brennan, sbrennan@psu.edu
-%   % * Finish posting week-by-week presentations
+% - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
+%   % * Finish editing day-to-day presentations
 %   % * Add quiz codes
 
 
@@ -97,10 +93,6 @@ dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/Classes_VehicleDynamics_
 dependencySubfolders{ith_repo} = {'Functions','Data'};
 
 % ith_repo = ith_repo+1;
-% dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/PathPlanning_GeomTools_GeomClassLibrary';
-% dependencySubfolders{ith_repo} = {'Functions','Data'};
-
-% ith_repo = ith_repo+1;
 % dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/PathPlanning_MapTools_MapGenClassLibrary';
 % dependencySubfolders{ith_repo} = {'Functions','testFixtures','GridMapGen'};
 
@@ -162,7 +154,7 @@ thisVersion = version('-release');
 % Confirm that this is 2025b
 if ~strcmpi(thisVersion,'2025b')
 	warning('Expected release version 2025b, but found %s instead.',thisVersion);
-	fcn_DebugTools_cprintf('*red','Many errors may be introduced by using an out-of-date MATLAB version. Students using out of date versions are far more likely to face additional challenges in completing assignments.');
+	fcn_DebugTools_cprintf('*red','Many errors may be introduced by using an older MATLAB version, and newer versions have not been tested yet but should work. Students using out-of-date versions are far more likely to face additional challenges in completing assignments.');
 	fprintf(1,'Press any key to continue.\n');
 	pause;
 end
