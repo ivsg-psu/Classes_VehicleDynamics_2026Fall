@@ -140,11 +140,11 @@ Upon completion of the course, students should be able to:
 
 ### Attendance and Make-up Policy
 
-In accordance with University policy, all students are encouraged to attend every class period.  While the lecture content will nominally follow the assigned texts and powerpoint slides, students are responsible for information disseminated in the lectures, though not necessarily covered in the text.
+In accordance with University policy, all students are encouraged to attend every class period.  While the lecture content will nominally follow the assigned texts and PowerPoint slides, students are responsible for information disseminated in the lectures, though not necessarily covered in the text.
 
 If there are a large number of students missing in class, it is common that an in-class quiz will be given.
 
-If a student is going to miss class, please tell Dr. Brennan via E-mail at least 24 hours in advance. These are usually excused as long as the reason is something your employer would allow as "professional development" if you had a job. So job interviews, grad school visits, senior project trips are valid excuses; getting a better flight on Thanksgiving is not a valid reason to miss the Friday before Thanksgiving week or the Monday afterwards.
+If a student is going to miss class, please tell Dr. Brennan via E-mail at least 24 hours in advance. The first 2 are usually excused as long as the reason is something your employer would allow as "professional development" if you had a job. So job interviews, grad school visits, senior project trips are valid excuses; getting a better flight on Thanksgiving is not a valid reason to miss the Friday before Thanksgiving week or the Monday afterwards. After 2 absences, students will automatically miss 20% of the credit for in-class quizzes if the class is excused - which is better than a zero for unexcused absences.
 
 In the student E-mail, students should list the specific dates, their name, and the class (ME 452). Faculty may teach 3 to 5 different classes simultaneously and most faculty get dozens to hundreds of emails a day and thus may go several days before being able to check all messages. So an e-mail from <SteelerFan23@gmail.com> saying “I’m missing class tomorrow” isn’t helpful at all in identifying the student, class, or date being missed.
 
@@ -235,7 +235,7 @@ Students will have the opportunity to choose (vote) the curriculum near the end 
 
 ### Final exam
 
-The final exam is optional (see Option II above) and comprehensive.  The date and time of the exam is determined around mid-semester by the registrar.
+There is no final exam.
 
 ### Academic Integrity Statement
 
@@ -243,13 +243,13 @@ Standard (required) statement: The University defines academic integrity as the 
 
 Specific to this class:  Students are encouraged to work together on homework assignments; however, original solutions are required.  
 
-So how do we expect students to balance “working together” with “original solutions”? For homework, the threshold of cheating is defined as follows: if the person grading the assignments is able to identify which students have worked together by their solutions or specific aspects of their solution approach, and their interaction is NOT clearly documented on the solutions (“I obtained the following equation from Mary”), then these students are working too closely together.
+So how do we expect students to balance “working together” with “original solutions”? For homework, the threshold of cheating is defined as follows: if the person or algorithm grading the assignments is able to identify which students have worked together by their solutions or specific aspects of their solution approach, and their interaction is NOT clearly documented on the solutions (“I obtained the following equation from Mary, I copied this function from Tom ”), then these students are working too closely together. If students document where and how they are working together, this is usually acceptable - unless it's copying entire problems or sets of problems.
 
-If cheating or copying is suspected, all students involved will receive a warning if the violation is minor and if this is their first such warning. For obvious and major violations, e.g. major portions of the assignment are copied (such as simulations), then no credit will be given for the assignment to all students involved.  After the first warning, any subsequent cheating – minor or major – will result in a zero for the entire assignment and the student will be referred to the college for an academic integrity violation. Three cheating events will result in failing the class.
+If cheating or copying is suspected, all students involved will receive a warning if the violation is minor and if this is their first such warning. For obvious and major violations, e.g. major portions of the assignment are copied (such as simulations), then no credit will be given for the assignment to all students involved.  After the first warning, any subsequent cheating – minor or major – will result in a zero for the entire assignment and the student will be referred to the college for an academic integrity violation. Three cheating events will result in failing the class. Cheating - especially using AI tools - during an exam is considered a major violation and will result in a zero for the exam.
 
-Again, note that we tend to be far more forgiving of issues if teamwork is documented, e.g. “Mary helped me with my simulation block representing the coordinate transforms.” Vague documentation such as “Mary helped me” is better than nothing but may still result in a zero for you (but not Mary) if that help is not specifically documented, and it seems like you didn’t do anything but use Mary’s simulation. But if a student clearly used Mary's work without documenting it, but the student and Mary will both receive a zero grade
+Again, note that we tend to be far more forgiving of issues if teamwork is documented, e.g. “Mary helped me with my simulation block representing the coordinate transforms.” Vague documentation such as “Mary helped me” is better than nothing but may still result in a zero or severe grade penalty for you (but not Mary) if that help is not specifically documented, and if it seems like you didn’t do anything but use Mary’s simulation. But if a student clearly used Mary's work without documenting it, but the student and Mary will both receive a zero grade. If you are the one helping someone else, a suggestion is to document this help in your own problem set.
 
-Cheating of any kind on exams will not be tolerated and will be immediately processed as an academic integrity violation.
+Again, cheating of any kind on exams will not be tolerated and will be immediately processed as an academic integrity violation resulting in at minimum a zero exam grade.
 
 ### Course-specific AI Statement
 
