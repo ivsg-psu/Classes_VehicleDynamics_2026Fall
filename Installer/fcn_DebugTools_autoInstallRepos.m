@@ -136,6 +136,10 @@ function fcn_DebugTools_autoInstallRepos(...
 %   % * Fixed bug on line 343 where utilities_dir variable called but not
 %   %   % defined. Now directoryPath variable used
 %   % * Added input checking
+% 
+% 2026_03_24 by Sean Brennan, sbrennan@psu.edu
+% - In fcn_DebugTools_autoInstallRepos
+%   % * Updated version of DebugTools so it will auto-install correctly
 
 % TO-DO:
 % - Would like to have the following functionality:
@@ -306,7 +310,7 @@ temp = which('fcn_DebugTools_findLatestGitHubRelease');
 
 if isempty(temp)
     % Install DebugTools using internal function and trusted repo
-    dependency_name      = 'DebugTools_v2025_11_11a';
+    dependency_name      = 'DebugTools_v2026_04_18';
     dependency_subfolders = {'Functions','Data'};
     dependency_url        = cat(2,'https://github.com/ivsg-psu/Errata_Tutorials_DebugTools/archive/refs/tags/',...
         dependency_name,'.zip');

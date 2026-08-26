@@ -206,6 +206,7 @@ disp('Welcome to the demo code for the VD2026 library!')
 fprintf(1,'Press any key to continue to the open assignments.\n');
 pause;
 
+script_Week01_Quiz01_Intro
 % script_Week01_HW01
 % script_Week02_HW02
 
