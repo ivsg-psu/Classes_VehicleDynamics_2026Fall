@@ -207,8 +207,7 @@ fprintf(1,'Press any key to continue to the open assignments.\n');
 pause;
 
 script_Week01_Quiz01_Intro
-% script_Week01_HW01
-% script_Week02_HW02
+% script_Week01_Quiz02_WhatIsAVehicle
 
 %% Functions follow
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
