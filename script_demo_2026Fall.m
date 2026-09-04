@@ -23,7 +23,12 @@
 % - First edit of the repo from the 2026 Spring template
 % - In script_demo_2026Spring.m
 %   % * Deleted repeat calls to PathPlanning_GeomTools_GeomClassLibrary
-
+% 
+% 2026_09_04 by Sean Brennan, sbrennan@psu.edu
+% - First edit of the repo from the 2026 Spring template
+% - In script_demo_2026Spring.m
+%   % * Added a function to automatically find the next unfinished
+%   %   % assignment and run it.
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -78,10 +83,6 @@ dependencySubfolders{ith_repo} = {''};
 
 ith_repo = ith_repo+1;
 dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/PathPlanning_GeomTools_GeomClassLibrary';
-dependencySubfolders{ith_repo} = {'Functions','Data'};
-
-ith_repo = ith_repo+1;
-dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/PathPlanning_PathTools_PathClassLibrary';
 dependencySubfolders{ith_repo} = {'Functions','Data'};
 
 ith_repo = ith_repo+1;
@@ -206,8 +207,26 @@ disp('Welcome to the demo code for the VD2026 library!')
 fprintf(1,'Press any key to continue to the open assignments.\n');
 pause;
 
-script_Week01_Quiz01_Intro
-% script_Week01_Quiz02_WhatIsAVehicle
+scriptToRun = ''; % Assume an empty script to start
+
+% Run Week01_Quiz01_Intro?
+scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz01_Intro');
+
+% Run Week01_Quiz02_WhatIsAVehicle?
+scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz02_WhatIsAVehicle');
+
+% Run Week01_Quiz03_Syllabus?
+scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz03_Syllabus');
+
+% Run Week02_Quiz04_NumericalSimICs?
+scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz04_NumericalSimICs');
+
+
+if ~isempty(scriptToRun)
+	run(scriptToRun);
+else
+	disp('All caught up! No unsubmitted assignments were found. If you wish to re-run a particular script, type the script name in the following command line, when >> appears. Do not double-click the script - this will not work.');
+end
 
 %% Functions follow
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -220,6 +239,20 @@ script_Week01_Quiz01_Intro
 %
 % See: https://patorjk.com/software/taag/#p=display&f=Big&t=Functions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%§
+
+%% function fcn_INTERNAL_checkIfStudentAlreadyDidAssignment
+function scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,scriptToCheck)
+dataForThisScript = fullfile(pwd,'Data',sprintf('answersSoFar_%s.mat',scriptToCheck));
+if isempty(scriptToRun) && ~exist(dataForThisScript,'file')
+	scriptToRun = sprintf('script_%s',scriptToCheck);
+end
+if isempty(scriptToRun) && exist(dataForThisScript,'file')
+	load(dataForThisScript,'answers');
+	if ~any(strcmp(answers,'SUBMITTED'))
+		scriptToRun = sprintf('script_%s',scriptToCheck);
+	end
+end
+end
 
 %% function fcn_INTERNAL_clearUtilitiesFromPathAndFolders
 function fcn_INTERNAL_clearUtilitiesFromPathAndFolders
