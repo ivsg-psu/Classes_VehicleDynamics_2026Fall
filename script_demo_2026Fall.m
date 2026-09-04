@@ -25,7 +25,6 @@
 %   % * Deleted repeat calls to PathPlanning_GeomTools_GeomClassLibrary
 % 
 % 2026_09_04 by Sean Brennan, sbrennan@psu.edu
-% - First edit of the repo from the 2026 Spring template
 % - In script_demo_2026Spring.m
 %   % * Added a function to automatically find the next unfinished
 %   %   % assignment and run it.
