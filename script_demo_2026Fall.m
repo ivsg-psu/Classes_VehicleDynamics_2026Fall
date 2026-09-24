@@ -233,6 +233,9 @@ scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week0
 % Run script_Week02_HW1_InitialsViaGPS?
 scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_HW1_InitialsViaGPS',true);
 
+% Run Week03_Quiz06_CoordinateSystemX?
+scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz06_CoordinateSystemX',true);
+
 if ~isempty(scriptToRun)
 	fprintf(1,'\nIt appears that the following script needs to run: \n%s\n',scriptToRun);
 	fprintf(1,'Press any key to continue to the script.\n');
