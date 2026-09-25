@@ -239,6 +239,10 @@ scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week0
 % Run Week03_Quiz07_CoordinateSystemRotations?
 scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz07_CoordinateSystemRotations',true);
 
+% Run Week03_HW2_RungeKuttaEngine?
+scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_HW2_RungeKuttaEngine',true);
+
+
 
 if ~isempty(scriptToRun)
 	fprintf(1,'\nIt appears that the following script needs to run: \n%s\n',scriptToRun);
