@@ -34,6 +34,10 @@
 % - In script_demo_2026Fall.m
 %   % * In fcn_INTERNAL_checkIfStudentAlreadyDidAssignment, added verbose
 %   %   % outputs so we can directly see what scripts were checked
+%
+% 2026_09_28 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_2026Fall.m
+%   % * Added script_Week04_HW3_RungeKuttaKinematics to assignment list
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -242,7 +246,8 @@ scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week0
 % Run Week03_HW2_RungeKuttaEngine?
 scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_HW2_RungeKuttaEngine',true);
 
-
+% Run Week04_HW3_RungeKuttaKinematics?
+scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_HW3_RungeKuttaKinematics',true);
 
 if ~isempty(scriptToRun)
 	fprintf(1,'\nIt appears that the following script needs to run: \n%s\n',scriptToRun);
