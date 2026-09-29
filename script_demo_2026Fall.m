@@ -38,6 +38,10 @@
 % 2026_09_28 by Sean Brennan, sbrennan@psu.edu
 % - In script_demo_2026Fall.m
 %   % * Added script_Week04_HW3_RungeKuttaKinematics to assignment list
+%
+% 2026_09_29 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_2026Fall.m
+%   % * Added VehicleSimulations_ChassisModels_VDClass library
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -99,7 +103,7 @@ dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/FieldDataCollection_GPSR
 dependencySubfolders{ith_repo} = {'Functions'};
 
 ith_repo = ith_repo+1;
-dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/Classes_VehicleDynamics_2026VDLibrary';
+dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/VehicleSimulations_ChassisModels_VDClass';
 dependencySubfolders{ith_repo} = {'Functions','Data'};
 
 % ith_repo = ith_repo+1;
