@@ -52,6 +52,8 @@ for ith_file = 1:Nfiles
 	end
 end
 
+positionsAndSpeeds = data;
+
 %% Plot the position data
 % Type "edit script_test_fcn_plotRoad_plotLL" to see a script that shows
 % how the function below is used.
