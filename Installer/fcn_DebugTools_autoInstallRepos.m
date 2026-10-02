@@ -140,6 +140,12 @@ function fcn_DebugTools_autoInstallRepos(...
 % 2026_03_24 by Sean Brennan, sbrennan@psu.edu
 % - In fcn_DebugTools_autoInstallRepos
 %   % * Updated version of DebugTools so it will auto-install correctly
+%
+% 2026_10_01 by Sean Brennan, sbrennan@psu.edu
+% - In fcn_DebugTools_autoInstallRepos
+%   % * Updated flags to allow Linux/Unix usage
+%   % * Updated default installer to current version
+
 
 % TO-DO:
 % - Would like to have the following functionality:
@@ -310,7 +316,7 @@ temp = which('fcn_DebugTools_findLatestGitHubRelease');
 
 if isempty(temp)
     % Install DebugTools using internal function and trusted repo
-    dependency_name      = 'DebugTools_v2026_04_18';
+    dependency_name      = 'DebugTools_2026_10_01';
     dependency_subfolders = {'Functions','Data'};
     dependency_url        = cat(2,'https://github.com/ivsg-psu/Errata_Tutorials_DebugTools/archive/refs/tags/',...
         dependency_name,'.zip');
@@ -817,12 +823,16 @@ if ~exist(flag_varname,'var') || isempty(eval(flag_varname))
                 if directory_contents(ith_entry).isdir
                     flag_is_nested_install = 1;
                     install_directory_from = fullfile(directory_contents(ith_entry).folder,directory_contents(ith_entry).name);
-                    if ispc
-                        install_files_from = fullfile(directory_contents(ith_entry).folder,directory_contents(ith_entry).name,'*.*'); % For PCs
-                    elseif ismac
-                        install_files_from = fullfile(directory_contents(ith_entry).folder,directory_contents(ith_entry).name,'*'); % For Macs
-                    end
-                    install_location_to = fullfile(directory_contents(ith_entry).folder);
+					if ispc
+						install_files_from = fullfile(directory_contents(ith_entry).folder,directory_contents(ith_entry).name,'*.*'); % For PCs
+					elseif ismac
+						install_files_from = fullfile(directory_contents(ith_entry).folder,directory_contents(ith_entry).name,'*'); % For Macs
+					elseif isunix
+						install_files_from = fullfile(directory_contents(ith_entry).folder,directory_contents(ith_entry).name,'*'); % For Unix/Linux
+					else
+						error('Unrecognized OS encountered?!');
+					end
+					install_location_to = fullfile(directory_contents(ith_entry).folder);
                 end
             end
         end
