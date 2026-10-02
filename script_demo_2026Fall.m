@@ -233,10 +233,10 @@ scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week0
 scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz03_Syllabus',false);
 
 % Run Week02_Quiz04_NumericalSimICs?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz04_NumericalSimICs',true);
+scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz04_NumericalSimICs',false);
 
 % Run Week02_Quiz05_NumericalSimDeltaTs?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz05_NumericalSimDeltaTs',true);
+scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz05_NumericalSimDeltaTs',false);
 
 % Run script_Week02_HW1_InitialsViaGPS?
 scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_HW1_InitialsViaGPS',true);
@@ -252,6 +252,12 @@ scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week0
 
 % Run Week04_HW3_RungeKuttaKinematics?
 scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_HW3_RungeKuttaKinematics',true);
+
+% Run Week04_Quiz08_AckermanSteeringAngle?
+scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz08_AckermanSteeringAngle',true);
+
+% Run Week04_Quiz09_HighSpeedSteadyState?
+scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz09_HighSpeedSteadyState',true);
 
 if ~isempty(scriptToRun)
 	fprintf(1,'\nIt appears that the following script needs to run: \n%s\n',scriptToRun);
