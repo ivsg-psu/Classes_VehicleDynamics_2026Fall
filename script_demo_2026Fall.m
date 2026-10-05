@@ -259,6 +259,9 @@ scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week0
 % Run Week04_Quiz09_HighSpeedSteadyState?
 scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz09_HighSpeedSteadyState',true);
 
+% Run Week04_Quiz10_UndersteerCurves?
+scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz10_UndersteerCurves',true);
+
 if ~isempty(scriptToRun)
 	fprintf(1,'\nIt appears that the following script needs to run: \n%s\n',scriptToRun);
 	fprintf(1,'Press any key to continue to the script.\n');
