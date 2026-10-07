@@ -42,6 +42,10 @@
 % 2026_09_29 by Sean Brennan, sbrennan@psu.edu
 % - In script_demo_2026Fall.m
 %   % * Added VehicleSimulations_ChassisModels_VDClass library
+%
+% 2026_10_06 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_2026Fall.m
+%   % * Added quizzes up to 11
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -261,6 +265,10 @@ scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week0
 
 % Run Week04_Quiz10_UndersteerCurves?
 scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz10_UndersteerCurves',true);
+
+% Run Week04_Quiz11_CriticalSpeedQuestions?
+scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz11_CriticalSpeedQuestions',true);
+
 
 if ~isempty(scriptToRun)
 	fprintf(1,'\nIt appears that the following script needs to run: \n%s\n',scriptToRun);
