@@ -227,44 +227,52 @@ pause;
 scriptToRun = ''; % Assume an empty script to start
 
 fprintf(1,'Checking which scripts need to run:\n');
-% Run Week01_Quiz01_Intro?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz01_Intro',false);
 
-% Run Week01_Quiz02_WhatIsAVehicle?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz02_WhatIsAVehicle',false);
+if 1==0
+    % Run Week01_Quiz01_Intro?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz01_Intro',false);
 
-% Run Week01_Quiz03_Syllabus?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz03_Syllabus',false);
+    % Run Week01_Quiz02_WhatIsAVehicle?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz02_WhatIsAVehicle',false);
 
-% Run Week02_Quiz04_NumericalSimICs?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz04_NumericalSimICs',false);
+    % Run Week01_Quiz03_Syllabus?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz03_Syllabus',false);
 
-% Run Week02_Quiz05_NumericalSimDeltaTs?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz05_NumericalSimDeltaTs',false);
+    % Run Week02_Quiz04_NumericalSimICs?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz04_NumericalSimICs',false);
 
-% Run script_Week02_HW1_InitialsViaGPS?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_HW1_InitialsViaGPS',true);
+    % Run Week02_Quiz05_NumericalSimDeltaTs?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz05_NumericalSimDeltaTs',false);
 
-% Run Week03_Quiz06_CoordinateSystemX?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz06_CoordinateSystemX',true);
+    % Run script_Week02_HW1_InitialsViaGPS?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_HW1_InitialsViaGPS',true);
 
-% Run Week03_Quiz07_CoordinateSystemRotations?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz07_CoordinateSystemRotations',true);
+    % Run Week03_Quiz06_CoordinateSystemX?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz06_CoordinateSystemX',true);
 
-% Run Week03_HW2_RungeKuttaEngine?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_HW2_RungeKuttaEngine',true);
+    % Run Week03_Quiz07_CoordinateSystemRotations?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz07_CoordinateSystemRotations',true);
 
-% Run Week04_HW3_RungeKuttaKinematics?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_HW3_RungeKuttaKinematics',true);
+    % Run Week03_HW2_RungeKuttaEngine?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_HW2_RungeKuttaEngine',true);
 
-% Run Week04_Quiz08_AckermanSteeringAngle?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz08_AckermanSteeringAngle',true);
+    % Run Week04_HW3_RungeKuttaKinematics?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_HW3_RungeKuttaKinematics',true);
 
-% Run Week04_Quiz09_HighSpeedSteadyState?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz09_HighSpeedSteadyState',true);
+    % Run Week04_Quiz08_AckermanSteeringAngle?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz08_AckermanSteeringAngle',true);
 
-% Run Week04_Quiz10_UndersteerCurves?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz10_UndersteerCurves',true);
+    % Run Week04_Quiz09_HighSpeedSteadyState?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz09_HighSpeedSteadyState',true);
+
+    % Run Week04_Quiz10_UndersteerCurves?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz10_UndersteerCurves',true);
+
+    % Run Week04_Quiz11_CriticalSpeedQuestions?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz11_CriticalSpeedQuestions',true);
+end
+% Run Week06_EXAM1?
+scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
 
 % Run Week04_Quiz11_CriticalSpeedQuestions?
 scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz11_CriticalSpeedQuestions',true);
