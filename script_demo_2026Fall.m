@@ -46,6 +46,10 @@
 % 2026_10_06 by Sean Brennan, sbrennan@psu.edu
 % - In script_demo_2026Fall.m
 %   % * Added quizzes up to 11
+%
+% 2026_10_12 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_VDCore
+%   % * Set flag to avoid repeated library installs
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -62,7 +66,7 @@ cd(filepath);
 %%% START OF STANDARD INSTALLER CODE %%%%%%%%%
 
 %% Clear paths and folders, if needed
-if 1==1
+if 1==0
     clear flag_VD2026_Folders_Initialized
 end
 
