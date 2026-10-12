@@ -50,6 +50,8 @@
 % 2026_10_12 by Sean Brennan, sbrennan@psu.edu
 % - In script_demo_VDCore
 %   % * Set flag to avoid repeated library installs
+%   % * Now checks if computer is online before attempting installs
+%   % * Add more verbose outputs if installs not proceeding as expected
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -121,29 +123,37 @@ dependencySubfolders{ith_repo} = {'Functions','Data'};
 
 
 %% Do we need to set up the work space?
-if ~exist('flag_VD2026_Folders_Initialized','var')
-    
-    % Clear prior global variable flags
-    clear global FLAG_*
+if fcn_DebugTools_isThisComputerOnline
+	if ~exist('flag_VD2026_Folders_Initialized','var')
 
-    % Navigate to the Installer directory
-    currentFolder = pwd;
-    cd('Installer');
-    % Create a function handle
-    func_handle = @fcn_DebugTools_autoInstallRepos;
+		% Clear prior global variable flags
+		clear global FLAG_*
 
-    % Return to the original directory
-    cd(currentFolder);
+		% Navigate to the Installer directory
+		currentFolder = pwd;
+		cd('Installer');
+		% Create a function handle
+		func_handle = @fcn_DebugTools_autoInstallRepos;
 
-    % Call the function to do the install
-    func_handle(dependencyURLs, dependencySubfolders, (0), (-1));
+		% Return to the original directory
+		cd(currentFolder);
 
-    % Add this function's folders to the path
-    this_project_folders = {...
-        'Functions','Data','Assignments'};
-    fcn_DebugTools_addSubdirectoriesToPath(pwd,this_project_folders)
+		% Call the function to do the install
+		func_handle(dependencyURLs, dependencySubfolders, (0), (-1));
 
-    flag_VD2026_Folders_Initialized = 1;
+		% Add this function's folders to the path
+		this_project_folders = {...
+			'Functions','Data','Assignments'};
+		fcn_DebugTools_addSubdirectoriesToPath(pwd,this_project_folders)
+
+		flag_VD2026_Folders_Initialized = 1;
+	else
+		fprintf(1,'Skipping installs as it appears this was completed previously in this session.\n');
+	end
+else
+	fcn_DebugTools_cprintf('*blue','This computer appears to be offline. The code will be run with libraries that are already installed. However, any updates to these libraries including bug fixes may be missed. Use code with caution!\n');
+	fprintf(1,'Press any key to continue.\n');
+	pause;
 end
 
 %%% END OF STANDARD INSTALLER CODE %%%%%%%%%
