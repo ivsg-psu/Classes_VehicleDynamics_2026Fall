@@ -46,6 +46,12 @@
 % 2026_10_06 by Sean Brennan, sbrennan@psu.edu
 % - In script_demo_2026Fall.m
 %   % * Added quizzes up to 11
+%
+% 2026_10_12 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_VDCore
+%   % * Set flag to avoid repeated library installs
+%   % * Now checks if computer is online before attempting installs
+%   % * Add more verbose outputs if installs not proceeding as expected
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -62,7 +68,7 @@ cd(filepath);
 %%% START OF STANDARD INSTALLER CODE %%%%%%%%%
 
 %% Clear paths and folders, if needed
-if 1==1
+if 1==0
     clear flag_VD2026_Folders_Initialized
 end
 
@@ -117,29 +123,37 @@ dependencySubfolders{ith_repo} = {'Functions','Data'};
 
 
 %% Do we need to set up the work space?
-if ~exist('flag_VD2026_Folders_Initialized','var')
-    
-    % Clear prior global variable flags
-    clear global FLAG_*
+if fcn_DebugTools_isThisComputerOnline
+	if ~exist('flag_VD2026_Folders_Initialized','var')
 
-    % Navigate to the Installer directory
-    currentFolder = pwd;
-    cd('Installer');
-    % Create a function handle
-    func_handle = @fcn_DebugTools_autoInstallRepos;
+		% Clear prior global variable flags
+		clear global FLAG_*
 
-    % Return to the original directory
-    cd(currentFolder);
+		% Navigate to the Installer directory
+		currentFolder = pwd;
+		cd('Installer');
+		% Create a function handle
+		func_handle = @fcn_DebugTools_autoInstallRepos;
 
-    % Call the function to do the install
-    func_handle(dependencyURLs, dependencySubfolders, (0), (-1));
+		% Return to the original directory
+		cd(currentFolder);
 
-    % Add this function's folders to the path
-    this_project_folders = {...
-        'Functions','Data','Assignments'};
-    fcn_DebugTools_addSubdirectoriesToPath(pwd,this_project_folders)
+		% Call the function to do the install
+		func_handle(dependencyURLs, dependencySubfolders, (0), (-1));
 
-    flag_VD2026_Folders_Initialized = 1;
+		% Add this function's folders to the path
+		this_project_folders = {...
+			'Functions','Data','Assignments'};
+		fcn_DebugTools_addSubdirectoriesToPath(pwd,this_project_folders)
+
+		flag_VD2026_Folders_Initialized = 1;
+	else
+		fprintf(1,'Skipping installs as it appears this was completed previously in this session.\n');
+	end
+else
+	fcn_DebugTools_cprintf('*blue','This computer appears to be offline. The code will be run with libraries that are already installed. However, any updates to these libraries including bug fixes may be missed. Use code with caution!\n');
+	fprintf(1,'Press any key to continue.\n');
+	pause;
 end
 
 %%% END OF STANDARD INSTALLER CODE %%%%%%%%%
@@ -228,7 +242,7 @@ scriptToRun = ''; % Assume an empty script to start
 
 fprintf(1,'Checking which scripts need to run:\n');
 
-if 1==0
+if 1==1
     % Run Week01_Quiz01_Intro?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz01_Intro',false);
 
@@ -270,12 +284,14 @@ if 1==0
 
     % Run Week04_Quiz11_CriticalSpeedQuestions?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz11_CriticalSpeedQuestions',true);
-end
-% Run Week06_EXAM1?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
 
-% Run Week04_Quiz11_CriticalSpeedQuestions?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz11_CriticalSpeedQuestions',true);
+	% Run Week05_Quiz12_Sideslip?
+	% scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_Quiz12_Sideslip',true);
+else
+	% Run Week06_EXAM1?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
+end
+
 
 
 if ~isempty(scriptToRun)
@@ -327,6 +343,8 @@ if flagNeedToCheck
 		else 
 			fprintf(1,'<-- data file found and assignment submitted. Assignment is done!\n');
 		end
+	else
+		fprintf(' (need to submit prior assignment first)\n');
 	end
 else
 	fprintf(1,'Skipping assignment as it is past due  : ');

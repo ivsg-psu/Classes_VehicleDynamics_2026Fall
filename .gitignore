@@ -35,3 +35,6 @@ octave-workspace
 Utilities/
 Submissions/
 StudentWork/
+
+# Student answers
+answersSoFar_*.mat
