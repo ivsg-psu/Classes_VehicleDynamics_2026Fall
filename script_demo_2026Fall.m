@@ -242,7 +242,7 @@ scriptToRun = ''; % Assume an empty script to start
 
 fprintf(1,'Checking which scripts need to run:\n');
 
-if 1==0
+if 1==1
     % Run Week01_Quiz01_Intro?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz01_Intro',false);
 
@@ -284,12 +284,14 @@ if 1==0
 
     % Run Week04_Quiz11_CriticalSpeedQuestions?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz11_CriticalSpeedQuestions',true);
-end
-% Run Week06_EXAM1?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
 
-% Run Week04_Quiz11_CriticalSpeedQuestions?
-scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz11_CriticalSpeedQuestions',true);
+	% Run Week05_Quiz12_Sideslip?
+	% scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_Quiz12_Sideslip',true);
+else
+	% Run Week06_EXAM1?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
+end
+
 
 
 if ~isempty(scriptToRun)
@@ -341,6 +343,8 @@ if flagNeedToCheck
 		else 
 			fprintf(1,'<-- data file found and assignment submitted. Assignment is done!\n');
 		end
+	else
+		fprintf(' (need to submit prior assignment first)\n');
 	end
 else
 	fprintf(1,'Skipping assignment as it is past due  : ');
