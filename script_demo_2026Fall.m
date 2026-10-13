@@ -52,6 +52,11 @@
 %   % * Set flag to avoid repeated library installs
 %   % * Now checks if computer is online before attempting installs
 %   % * Add more verbose outputs if installs not proceeding as expected
+%
+% 2026_10_12b by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_VDCore
+%   % * Fixed incorrect dependency order issue
+
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -123,9 +128,12 @@ dependencySubfolders{ith_repo} = {'Functions','Data'};
 
 
 %% Do we need to set up the work space?
-if fcn_DebugTools_isThisComputerOnline
-	if ~exist('flag_VD2026_Folders_Initialized','var')
-
+if ~exist('flag_VDCore_Folders_Initialized','var')
+	if (exist('fcn_DebugTools_isThisComputerOnline','file')==2) && ~fcn_DebugTools_isThisComputerOnline
+		fcn_DebugTools_cprintf('*blue','This computer appears to be offline. The code will be run with libraries that are already installed. However, any updates to these libraries including bug fixes may be missed. Use code with caution!\n');
+		fprintf(1,'Press any key to continue.\n');
+		pause;
+	else
 		% Clear prior global variable flags
 		clear global FLAG_*
 
@@ -143,17 +151,13 @@ if fcn_DebugTools_isThisComputerOnline
 
 		% Add this function's folders to the path
 		this_project_folders = {...
-			'Functions','Data','Assignments'};
+			'Functions','Data', 'Assignments', 'Submissions'};
 		fcn_DebugTools_addSubdirectoriesToPath(pwd,this_project_folders)
 
-		flag_VD2026_Folders_Initialized = 1;
-	else
-		fprintf(1,'Skipping installs as it appears this was completed previously in this session.\n');
+		flag_VDCore_Folders_Initialized = 1;
 	end
 else
-	fcn_DebugTools_cprintf('*blue','This computer appears to be offline. The code will be run with libraries that are already installed. However, any updates to these libraries including bug fixes may be missed. Use code with caution!\n');
-	fprintf(1,'Press any key to continue.\n');
-	pause;
+	fprintf(1,'Skipping installs as it appears this was completed previously in this session.\n');
 end
 
 %%% END OF STANDARD INSTALLER CODE %%%%%%%%%
