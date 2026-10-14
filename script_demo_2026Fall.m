@@ -128,7 +128,7 @@ dependencySubfolders{ith_repo} = {'Functions','Data'};
 
 
 %% Do we need to set up the work space?
-if ~exist('flag_VDCore_Folders_Initialized','var')
+if ~exist('flag_VD2026_Folders_Initialized','var') || 0==flag_VD2026_Folders_Initialized
 	if (exist('fcn_DebugTools_isThisComputerOnline','file')==2) && ~fcn_DebugTools_isThisComputerOnline
 		fcn_DebugTools_cprintf('*blue','This computer appears to be offline. The code will be run with libraries that are already installed. However, any updates to these libraries including bug fixes may be missed. Use code with caution!\n');
 		fprintf(1,'Press any key to continue.\n');
@@ -147,15 +147,14 @@ if ~exist('flag_VDCore_Folders_Initialized','var')
 		cd(currentFolder);
 
 		% Call the function to do the install
-		func_handle(dependencyURLs, dependencySubfolders, (0), (-1));
-
-		% Add this function's folders to the path
-		this_project_folders = {...
-			'Functions','Data', 'Assignments', 'Submissions'};
-		fcn_DebugTools_addSubdirectoriesToPath(pwd,this_project_folders)
-
-		flag_VDCore_Folders_Initialized = 1;
+		func_handle(dependencyURLs, dependencySubfolders, (0), (-1));		
 	end
+	% Add this function's folders to the path
+	this_project_folders = {...
+		'Functions','Data', 'Assignments', 'Submissions'};
+	fcn_DebugTools_addSubdirectoriesToPath(pwd,this_project_folders)
+
+	flag_VD2026_Folders_Initialized = 1;
 else
 	fprintf(1,'Skipping installs as it appears this was completed previously in this session.\n');
 end
@@ -238,7 +237,7 @@ end
 % See: http://patorjk.com/software/taag/#p=display&f=Big&t=Start%20of%20Demo%20Code
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-disp('Welcome to the demo code for the VD2026 library!')
+disp('Welcome to the codes for the Fall 2026 Vehicle Dynamics class!')
 fprintf(1,'Press any key to continue to the open assignments.\n');
 pause;
 
