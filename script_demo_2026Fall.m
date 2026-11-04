@@ -56,7 +56,10 @@
 % 2026_10_12b by Sean Brennan, sbrennan@psu.edu
 % - In script_demo_VDCore
 %   % * Fixed incorrect dependency order issue
-
+%
+% 2026_11_04 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_VDCore
+%   % * Added HW4 assignment (vehicle parameters)
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -246,7 +249,7 @@ scriptToRun = ''; % Assume an empty script to start
 fprintf(1,'Checking which scripts need to run:\n');
 
 if 1==1
-    % Run Week01_Quiz01_Intro?
+     % Run Week01_Quiz01_Intro?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz01_Intro',false);
 
     % Run Week01_Quiz02_WhatIsAVehicle?
@@ -262,34 +265,34 @@ if 1==1
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz05_NumericalSimDeltaTs',false);
 
     % Run script_Week02_HW1_InitialsViaGPS?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_HW1_InitialsViaGPS',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_HW1_InitialsViaGPS',false);
 
     % Run Week03_Quiz06_CoordinateSystemX?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz06_CoordinateSystemX',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz06_CoordinateSystemX',false);
 
     % Run Week03_Quiz07_CoordinateSystemRotations?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz07_CoordinateSystemRotations',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz07_CoordinateSystemRotations',false);
 
     % Run Week03_HW2_RungeKuttaEngine?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_HW2_RungeKuttaEngine',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_HW2_RungeKuttaEngine',false);
 
     % Run Week04_HW3_RungeKuttaKinematics?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_HW3_RungeKuttaKinematics',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_HW3_RungeKuttaKinematics',false);
 
     % Run Week04_Quiz08_AckermanSteeringAngle?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz08_AckermanSteeringAngle',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz08_AckermanSteeringAngle',false);
 
     % Run Week04_Quiz09_HighSpeedSteadyState?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz09_HighSpeedSteadyState',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz09_HighSpeedSteadyState',false);
 
     % Run Week04_Quiz10_UndersteerCurves?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz10_UndersteerCurves',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz10_UndersteerCurves',false);
 
     % Run Week04_Quiz11_CriticalSpeedQuestions?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz11_CriticalSpeedQuestions',true);
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz11_CriticalSpeedQuestions',true);
 
-	% Run Week05_Quiz12_Sideslip?
-	% scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_Quiz12_Sideslip',true);
+    % % Run Week05_HW4_VehicleParameters?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_HW4_VehicleParameters',true);
 else
 	% Run Week06_EXAM1?
 	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
