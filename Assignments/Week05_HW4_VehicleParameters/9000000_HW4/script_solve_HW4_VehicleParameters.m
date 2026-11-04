@@ -51,6 +51,15 @@ fprintf(1,'Copying parameters file to student folder:\n');
 f = which('script_solve_HW4_VehicleParameters');      % full path or 'built-in' or empty
 thisFolder = fileparts(f);
 [status,msg] = copyfile(vehicleParametersFile,fullfile(thisFolder,thisDataFileName));
+if 1~=status
+    error('Had problem copying file to local directory... message is: %s\n',msg);
+end
+
+[status,msg] = copyfile(vehicleParametersFile,fullfile('Data','vehicleParameters.mat'));
+if 1~=status
+    error('Had problem making copy of file... message is: %s\n',msg);
+end
+
 
 
 %% Functions follow
