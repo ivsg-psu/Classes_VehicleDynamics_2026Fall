@@ -60,6 +60,10 @@
 % 2026_11_04 by Sean Brennan, sbrennan@psu.edu
 % - In script_demo_VDCore
 %   % * Added HW4 assignment (vehicle parameters)
+%
+% 2026_11_06 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_VDCore
+%   % * Added script_Week05_Quiz13_AccelerationComponents
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -293,6 +297,10 @@ if 1==1
 
     % % Run Week05_HW4_VehicleParameters?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_HW4_VehicleParameters',true);
+
+    % % Run Week05_Quiz13_AccelerationComponents?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_Quiz13_AccelerationComponents',true);
+	
 else
 	% Run Week06_EXAM1?
 	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
