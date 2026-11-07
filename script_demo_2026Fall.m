@@ -64,6 +64,11 @@
 % 2026_11_06 by Sean Brennan, sbrennan@psu.edu
 % - In script_demo_VDCore
 %   % * Added script_Week05_Quiz13_AccelerationComponents
+%
+% 2026_11_07 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_VDCore
+%   % * Activated script_Week05_Quiz12_Sideslip
+%   % * Added script_Week06_Quiz15_EquationsOfMotion
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -295,14 +300,21 @@ if 1==1
     % Run Week04_Quiz11_CriticalSpeedQuestions?
 	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz11_CriticalSpeedQuestions',true);
 
-    % % Run Week05_HW4_VehicleParameters?
+    % Run Week05_Quiz12_Sideslip?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_Quiz12_Sideslip',true);
+
+    % Run Week05_HW4_VehicleParameters?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_HW4_VehicleParameters',true);
 
-    % % Run Week05_Quiz13_AccelerationComponents?
+    % Run Week05_Quiz13_AccelerationComponents?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_Quiz13_AccelerationComponents',true);
 	
+    % Run Week06_Quiz15_EquationsOfMotion?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_Quiz15_EquationsOfMotion',true);
+	
+
 else
-	% Run Week06_EXAM1?
+	% Run Week06_EXAM1? (Quiz 14)
 	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
 end
 
