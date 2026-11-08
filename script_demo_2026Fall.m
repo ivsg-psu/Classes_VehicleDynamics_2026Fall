@@ -69,6 +69,7 @@
 % - In script_demo_VDCore
 %   % * Activated script_Week05_Quiz12_Sideslip
 %   % * Added script_Week06_Quiz15_EquationsOfMotion
+%   % * Added script_Week06_Quiz16_ModelAnalysis
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -312,7 +313,8 @@ if 1==1
     % Run Week06_Quiz15_EquationsOfMotion?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_Quiz15_EquationsOfMotion',true);
 	
-
+    % Run Week06_Quiz16_ModelAnalysis?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_Quiz16_ModelAnalysis',true);
 else
 	% Run Week06_EXAM1? (Quiz 14)
 	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
