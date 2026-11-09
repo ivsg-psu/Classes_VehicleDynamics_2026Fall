@@ -48,28 +48,34 @@
 %   % * Added quizzes up to 11
 %
 % 2026_10_12 by Sean Brennan, sbrennan@psu.edu
-% - In script_demo_VDCore
+% - In script_demo_2026Fall
 %   % * Set flag to avoid repeated library installs
 %   % * Now checks if computer is online before attempting installs
 %   % * Add more verbose outputs if installs not proceeding as expected
 %
 % 2026_10_12b by Sean Brennan, sbrennan@psu.edu
-% - In script_demo_VDCore
+% - In script_demo_2026Fall
 %   % * Fixed incorrect dependency order issue
 %
 % 2026_11_04 by Sean Brennan, sbrennan@psu.edu
-% - In script_demo_VDCore
+% - In script_demo_2026Fall
 %   % * Added HW4 assignment (vehicle parameters)
 %
 % 2026_11_06 by Sean Brennan, sbrennan@psu.edu
-% - In script_demo_VDCore
+% - In script_demo_2026Fall
 %   % * Added script_Week05_Quiz13_AccelerationComponents
 %
 % 2026_11_07 by Sean Brennan, sbrennan@psu.edu
-% - In script_demo_VDCore
+% - In script_demo_2026Fall
 %   % * Activated script_Week05_Quiz12_Sideslip
 %   % * Added script_Week06_Quiz15_EquationsOfMotion
 %   % * Added script_Week06_Quiz16_ModelAnalysis
+%
+% 2026_11_09 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_2026Fall
+%   % * Fixed bug in HW4 where wrong directory was being submitted
+%   % * Added HW5 on Automated Parking
+
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -315,6 +321,10 @@ if 1==1
 	
     % Run Week06_Quiz16_ModelAnalysis?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_Quiz16_ModelAnalysis',true);
+
+    % Run Week06_HW5_AutomatedParking?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_HW5_AutomatedParking',true);
+
 else
 	% Run Week06_EXAM1? (Quiz 14)
 	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
