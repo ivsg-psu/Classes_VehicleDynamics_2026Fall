@@ -48,10 +48,34 @@
 %   % * Added quizzes up to 11
 %
 % 2026_10_12 by Sean Brennan, sbrennan@psu.edu
-% - In script_demo_VDCore
+% - In script_demo_2026Fall
 %   % * Set flag to avoid repeated library installs
 %   % * Now checks if computer is online before attempting installs
 %   % * Add more verbose outputs if installs not proceeding as expected
+%
+% 2026_10_12b by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_2026Fall
+%   % * Fixed incorrect dependency order issue
+%
+% 2026_11_04 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_2026Fall
+%   % * Added HW4 assignment (vehicle parameters)
+%
+% 2026_11_06 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_2026Fall
+%   % * Added script_Week05_Quiz13_AccelerationComponents
+%
+% 2026_11_07 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_2026Fall
+%   % * Activated script_Week05_Quiz12_Sideslip
+%   % * Added script_Week06_Quiz15_EquationsOfMotion
+%   % * Added script_Week06_Quiz16_ModelAnalysis
+%
+% 2026_11_09 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_2026Fall
+%   % * Fixed bug in HW4 where wrong directory was being submitted
+%   % * Added HW5 on Automated Parking
+
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -123,9 +147,12 @@ dependencySubfolders{ith_repo} = {'Functions','Data'};
 
 
 %% Do we need to set up the work space?
-if fcn_DebugTools_isThisComputerOnline
-	if ~exist('flag_VD2026_Folders_Initialized','var')
-
+if ~exist('flag_VD2026_Folders_Initialized','var') || 0==flag_VD2026_Folders_Initialized
+	if (exist('fcn_DebugTools_isThisComputerOnline','file')==2) && ~fcn_DebugTools_isThisComputerOnline
+		fcn_DebugTools_cprintf('*blue','This computer appears to be offline. The code will be run with libraries that are already installed. However, any updates to these libraries including bug fixes may be missed. Use code with caution!\n');
+		fprintf(1,'Press any key to continue.\n');
+		pause;
+	else
 		% Clear prior global variable flags
 		clear global FLAG_*
 
@@ -139,21 +166,16 @@ if fcn_DebugTools_isThisComputerOnline
 		cd(currentFolder);
 
 		% Call the function to do the install
-		func_handle(dependencyURLs, dependencySubfolders, (0), (-1));
-
-		% Add this function's folders to the path
-		this_project_folders = {...
-			'Functions','Data','Assignments'};
-		fcn_DebugTools_addSubdirectoriesToPath(pwd,this_project_folders)
-
-		flag_VD2026_Folders_Initialized = 1;
-	else
-		fprintf(1,'Skipping installs as it appears this was completed previously in this session.\n');
+		func_handle(dependencyURLs, dependencySubfolders, (0), (-1));		
 	end
+	% Add this function's folders to the path
+	this_project_folders = {...
+		'Functions','Data', 'Assignments', 'Submissions'};
+	fcn_DebugTools_addSubdirectoriesToPath(pwd,this_project_folders)
+
+	flag_VD2026_Folders_Initialized = 1;
 else
-	fcn_DebugTools_cprintf('*blue','This computer appears to be offline. The code will be run with libraries that are already installed. However, any updates to these libraries including bug fixes may be missed. Use code with caution!\n');
-	fprintf(1,'Press any key to continue.\n');
-	pause;
+	fprintf(1,'Skipping installs as it appears this was completed previously in this session.\n');
 end
 
 %%% END OF STANDARD INSTALLER CODE %%%%%%%%%
@@ -234,7 +256,7 @@ end
 % See: http://patorjk.com/software/taag/#p=display&f=Big&t=Start%20of%20Demo%20Code
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-disp('Welcome to the demo code for the VD2026 library!')
+disp('Welcome to the codes for the Fall 2026 Vehicle Dynamics class!')
 fprintf(1,'Press any key to continue to the open assignments.\n');
 pause;
 
@@ -243,7 +265,7 @@ scriptToRun = ''; % Assume an empty script to start
 fprintf(1,'Checking which scripts need to run:\n');
 
 if 1==1
-    % Run Week01_Quiz01_Intro?
+     % Run Week01_Quiz01_Intro?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz01_Intro',false);
 
     % Run Week01_Quiz02_WhatIsAVehicle?
@@ -259,36 +281,52 @@ if 1==1
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz05_NumericalSimDeltaTs',false);
 
     % Run script_Week02_HW1_InitialsViaGPS?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_HW1_InitialsViaGPS',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_HW1_InitialsViaGPS',false);
 
     % Run Week03_Quiz06_CoordinateSystemX?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz06_CoordinateSystemX',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz06_CoordinateSystemX',false);
 
     % Run Week03_Quiz07_CoordinateSystemRotations?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz07_CoordinateSystemRotations',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz07_CoordinateSystemRotations',false);
 
     % Run Week03_HW2_RungeKuttaEngine?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_HW2_RungeKuttaEngine',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_HW2_RungeKuttaEngine',false);
 
     % Run Week04_HW3_RungeKuttaKinematics?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_HW3_RungeKuttaKinematics',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_HW3_RungeKuttaKinematics',false);
 
     % Run Week04_Quiz08_AckermanSteeringAngle?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz08_AckermanSteeringAngle',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz08_AckermanSteeringAngle',false);
 
     % Run Week04_Quiz09_HighSpeedSteadyState?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz09_HighSpeedSteadyState',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz09_HighSpeedSteadyState',false);
 
     % Run Week04_Quiz10_UndersteerCurves?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz10_UndersteerCurves',true);
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz10_UndersteerCurves',false);
 
     % Run Week04_Quiz11_CriticalSpeedQuestions?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz11_CriticalSpeedQuestions',true);
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz11_CriticalSpeedQuestions',true);
 
-	% Run Week05_Quiz12_Sideslip?
-	% scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_Quiz12_Sideslip',true);
+    % Run Week05_Quiz12_Sideslip?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_Quiz12_Sideslip',true);
+
+    % Run Week05_HW4_VehicleParameters?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_HW4_VehicleParameters',true);
+
+    % Run Week05_Quiz13_AccelerationComponents?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_Quiz13_AccelerationComponents',true);
+	
+    % Run Week06_Quiz15_EquationsOfMotion?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_Quiz15_EquationsOfMotion',true);
+	
+    % Run Week06_Quiz16_ModelAnalysis?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_Quiz16_ModelAnalysis',true);
+
+    % Run Week06_HW5_AutomatedParking?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_HW5_AutomatedParking',true);
+
 else
-	% Run Week06_EXAM1?
+	% Run Week06_EXAM1? (Quiz 14)
 	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
 end
 
