@@ -79,6 +79,12 @@
 % 2026_11_13 by Sean Brennan, sbrennan@psu.edu
 % - In script_demo_2026Fall
 %   % * added Week07_HW6_BicycleModelDynamics assignment
+% - In script_Week06_Quiz16_ModelAnalysis
+%   % * Fixed the StudentID issue
+% - In fcn_fillSelections_Week06_Quiz16_ModelAnalysis
+%   % * Fixed incorrect function call due to renaming in core VD library
+%   % * fcn_VD_fill2DOFBicycleModelStateSpace is old
+%   % * fcn_VD_st2dofStateSpace is new
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
