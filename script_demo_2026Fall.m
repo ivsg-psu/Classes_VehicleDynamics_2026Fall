@@ -151,7 +151,7 @@ dependencySubfolders{ith_repo} = {'Functions','Data'};
 
 %% Do we need to set up the work space?
 if ~exist('flag_VD2026_Folders_Initialized','var') || 0==flag_VD2026_Folders_Initialized
-	flag_checkIfOnline = 0;
+	flag_checkIfOnline = 1;
 	if flag_checkIfOnline==0 || ((exist('fcn_DebugTools_isThisComputerOnline','file')==2) && ~fcn_DebugTools_isThisComputerOnline)
 		fprintf(1,'This computer appears to be offline. The code will be run with libraries that are already installed. However, any updates to these libraries including bug fixes may be missed. Use code with caution!\n');
 		fprintf(1,'Press any key to continue.\n');
