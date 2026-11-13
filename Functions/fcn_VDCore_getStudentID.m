@@ -226,6 +226,11 @@ if ~exist('thisStudentID','var')
 
 end
 
+if(isnan(thisStudentID))
+	badFile = fullfile('Data','answersSoFar_Week00_StudentID.mat');
+	delete(badFile);
+	error('Bad student ID found. Please restart and enter the student ID.');
+end
 
 
 %% Plot the results (for debugging)?

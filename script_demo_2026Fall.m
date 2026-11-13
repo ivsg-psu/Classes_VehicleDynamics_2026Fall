@@ -75,13 +75,16 @@
 % - In script_demo_2026Fall
 %   % * Fixed bug in HW4 where wrong directory was being submitted
 %   % * Added HW5 on Automated Parking
-
+%
+% 2026_11_13 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_2026Fall
+%   % * added Week07_HW6_BicycleModelDynamics assignment
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
 %   % * Finish editing day-to-day presentations
 %   % * Add quiz codes
-
+%   % * Fixed bug in getting student ID, if it is left blank
 
 %% Make sure we are running out of root directory
 st = dbstack; 
@@ -148,10 +151,39 @@ dependencySubfolders{ith_repo} = {'Functions','Data'};
 
 %% Do we need to set up the work space?
 if ~exist('flag_VD2026_Folders_Initialized','var') || 0==flag_VD2026_Folders_Initialized
-	if (exist('fcn_DebugTools_isThisComputerOnline','file')==2) && ~fcn_DebugTools_isThisComputerOnline
-		fcn_DebugTools_cprintf('*blue','This computer appears to be offline. The code will be run with libraries that are already installed. However, any updates to these libraries including bug fixes may be missed. Use code with caution!\n');
+	flag_checkIfOnline = 0;
+	if flag_checkIfOnline==0 || ((exist('fcn_DebugTools_isThisComputerOnline','file')==2) && ~fcn_DebugTools_isThisComputerOnline)
+		fprintf(1,'This computer appears to be offline. The code will be run with libraries that are already installed. However, any updates to these libraries including bug fixes may be missed. Use code with caution!\n');
 		fprintf(1,'Press any key to continue.\n');
 		pause;
+
+		% Navigate to the Installer directory
+		currentFolder = pwd;
+		utilitiesFolderSearch = fullfile(pwd,'Utilities','DebugTools*.');
+		debugsInstalled = dir(utilitiesFolderSearch);
+		debugToUse = fullfile(debugsInstalled(end).folder,debugsInstalled(end).name,'Functions');
+		cd(debugToUse);
+
+		% Create a function handle
+		func_handleAddSubdirectoriesToPath = @fcn_DebugTools_addSubdirectoriesToPath;
+				
+		% Return to the original directory
+		cd(currentFolder);
+
+		pathToSearch = fullfile(pwd,'Utilities');
+		subfolders = dir(pathToSearch);
+		subfolders = subfolders([subfolders.isdir]);
+		namedSubfolders = subfolders(~ismember({subfolders.name},{'.','..'}));
+		for ith_repo = 1:length(namedSubfolders)
+			thisFolderRoot = fullfile(namedSubfolders(ith_repo).folder,namedSubfolders(ith_repo).name);
+			% Add this function's folders to the path
+			if exist(fullfile(thisFolderRoot,'Functions'),'dir')
+				func_handleAddSubdirectoriesToPath(thisFolderRoot,{'Functions'});
+			end
+			if exist(fullfile(thisFolderRoot,'Data'),'dir')
+				func_handleAddSubdirectoriesToPath(thisFolderRoot,{'Data'});
+			end
+		end
 	else
 		% Clear prior global variable flags
 		clear global FLAG_*
@@ -324,6 +356,9 @@ if 1==1
 
     % Run Week06_HW5_AutomatedParking?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_HW5_AutomatedParking',true);
+
+    % Run Week07_HW6_BicycleModelDynamics?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week07_HW6_BicycleModelDynamics',true);
 
 else
 	% Run Week06_EXAM1? (Quiz 14)
