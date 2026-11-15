@@ -1,4 +1,4 @@
-%% Introduction to and Purpose of the Code
+ %% Introduction to and Purpose of the Code
 % This is the explanation of the code that can be found by running
 %
 %       script_demo_2026Spring.m
@@ -18,17 +18,16 @@
 % maintained by Dr. Brennan in the VDCore library which only he has access.
 
 % REVISION HISTORY:
-% 
+%
 % 2026_08_24 by Sean Brennan, sbrennan@psu.edu
 % - First edit of the repo from the 2026 Spring template
 % - In script_demo_2026Fall.m
 %   % * Deleted repeat calls to PathPlanning_GeomTools_GeomClassLibrary
-% 
+%
 % 2026_09_04 by Sean Brennan, sbrennan@psu.edu
 % - In script_demo_2026Fall.m
 %   % * Added a function to automatically find the next unfinished
 %   %   % assignment and run it.
-%
 %
 % 2026_09_15 by Sean Brennan, sbrennan@psu.edu
 % - In script_demo_2026Fall.m
@@ -85,6 +84,10 @@
 %   % * Fixed incorrect function call due to renaming in core VD library
 %   % * fcn_VD_fill2DOFBicycleModelStateSpace is old
 %   % * fcn_VD_st2dofStateSpace is new
+%
+% 2026_11_13 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_2026Fall
+%   % * Major changes to installer code so that it will work offline
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -93,192 +96,38 @@
 %   % * Fixed bug in getting student ID, if it is left blank
 
 %% Make sure we are running out of root directory
-st = dbstack; 
+st = dbstack;
 thisFile = which(st(1).file);
 [filepath,name,ext] = fileparts(thisFile);
 cd(filepath);
 
-%%% START OF STANDARD INSTALLER CODE %%%%%%%%%
+%% START OF STANDARD INSTALLER CODE %%%%%%%%%
 
-%% Clear paths and folders, if needed
-if 1==0
-    clear flag_VD2026_Folders_Initialized
+%%% Clear paths and folders, if needed
+if 1==1
+	clear flag_VD2026_Folders_Initialized
 end
 
 if 1==0
-    fcn_INTERNAL_clearUtilitiesFromPathAndFolders;
+	fcn_INTERNAL_clearUtilitiesFromPathAndFolders;
 end
 
 if 1==0
-    % Resets all paths to factory default
-    restoredefaultpath;
+	% Resets all paths to factory default
+	restoredefaultpath;
 end
 
-%% Install dependencies
-% Define a universal resource locator (URL) pointing to the repos of
-% dependencies to install. Note that DebugTools is always installed
-% automatically, first, even if not listed:
-clear dependencyURLs dependencySubfolders
-ith_repo = 0;
 
-ith_repo = ith_repo+1;
-dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/PathPlanning_PathTools_PathClassLibrary';
-dependencySubfolders{ith_repo} = {'Functions','Data'};
-
-ith_repo = ith_repo+1;
-dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/PathPlanning_PathTools_GetUserInputPath';
-dependencySubfolders{ith_repo} = {''};
-
-ith_repo = ith_repo+1;
-dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/FieldDataCollection_VisualizingFieldData_PlotRoad';
-dependencySubfolders{ith_repo} = {'Functions','Data'};
-
-ith_repo = ith_repo+1;
-dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/Classes_Grading_PrepareSubmission';
-dependencySubfolders{ith_repo} = {''};
-
-ith_repo = ith_repo+1;
-dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/PathPlanning_GeomTools_GeomClassLibrary';
-dependencySubfolders{ith_repo} = {'Functions','Data'};
-
-ith_repo = ith_repo+1;
-dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/FieldDataCollection_GPSRelatedCodes_GPSClass';
-dependencySubfolders{ith_repo} = {'Functions'};
-
-ith_repo = ith_repo+1;
-dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/VehicleSimulations_ChassisModels_VDClass';
-dependencySubfolders{ith_repo} = {'Functions','Data'};
-
-% ith_repo = ith_repo+1;
-% dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/PathPlanning_MapTools_MapGenClassLibrary';
-% dependencySubfolders{ith_repo} = {'Functions','testFixtures','GridMapGen'};
-
-
-
-%% Do we need to set up the work space?
+% Do we need to set up the work space?
 if ~exist('flag_VD2026_Folders_Initialized','var') || 0==flag_VD2026_Folders_Initialized
-	flag_checkIfOnline = 1;
-	if flag_checkIfOnline==0 || ((exist('fcn_DebugTools_isThisComputerOnline','file')==2) && ~fcn_DebugTools_isThisComputerOnline)
-		fprintf(1,'This computer appears to be offline. The code will be run with libraries that are already installed. However, any updates to these libraries including bug fixes may be missed. Use code with caution!\n');
-		fprintf(1,'Press any key to continue.\n');
-		pause;
-
-		% Navigate to the Installer directory
-		currentFolder = pwd;
-		utilitiesFolderSearch = fullfile(pwd,'Utilities','DebugTools*.');
-		debugsInstalled = dir(utilitiesFolderSearch);
-		debugToUse = fullfile(debugsInstalled(end).folder,debugsInstalled(end).name,'Functions');
-		cd(debugToUse);
-
-		% Create a function handle
-		func_handleAddSubdirectoriesToPath = @fcn_DebugTools_addSubdirectoriesToPath;
-				
-		% Return to the original directory
-		cd(currentFolder);
-
-		pathToSearch = fullfile(pwd,'Utilities');
-		subfolders = dir(pathToSearch);
-		subfolders = subfolders([subfolders.isdir]);
-		namedSubfolders = subfolders(~ismember({subfolders.name},{'.','..'}));
-		for ith_repo = 1:length(namedSubfolders)
-			thisFolderRoot = fullfile(namedSubfolders(ith_repo).folder,namedSubfolders(ith_repo).name);
-			% Add this function's folders to the path
-			if exist(fullfile(thisFolderRoot,'Functions'),'dir')
-				func_handleAddSubdirectoriesToPath(thisFolderRoot,{'Functions'});
-			end
-			if exist(fullfile(thisFolderRoot,'Data'),'dir')
-				func_handleAddSubdirectoriesToPath(thisFolderRoot,{'Data'});
-			end
-		end
-	else
-		% Clear prior global variable flags
-		clear global FLAG_*
-
-		% Navigate to the Installer directory
-		currentFolder = pwd;
-		cd('Installer');
-		% Create a function handle
-		func_handle = @fcn_DebugTools_autoInstallRepos;
-
-		% Return to the original directory
-		cd(currentFolder);
-
-		% Call the function to do the install
-		func_handle(dependencyURLs, dependencySubfolders, (0), (-1));		
-	end
-	% Add this function's folders to the path
-	this_project_folders = {...
-		'Functions','Data', 'Assignments', 'Submissions'};
-	fcn_DebugTools_addSubdirectoriesToPath(pwd,this_project_folders)
-
+	fcn_INTERNAL_setupWorkspace;
 	flag_VD2026_Folders_Initialized = 1;
 else
 	fprintf(1,'Skipping installs as it appears this was completed previously in this session.\n');
 end
 
-%%% END OF STANDARD INSTALLER CODE %%%%%%%%%
+%%%% END OF STANDARD INSTALLER CODE %%%%%%%%%
 
-%% Set environment flags for input checking in VD2026 library
-% These are values to set if we want to check inputs or do debugging
-setenv('MATLABFLAG_VD2026_FLAG_CHECK_INPUTS','1');
-setenv('MATLABFLAG_VD2026_FLAG_DO_DEBUG','0');
-
-%% Set environment flags that define the ENU origin
-% This sets the "center" of the ENU coordinate system for all plotting
-% functions
-% Location for Test Track base station
-setenv('MATLABFLAG_PLOTROAD_REFERENCE_LATITUDE','40.86368573');
-setenv('MATLABFLAG_PLOTROAD_REFERENCE_LONGITUDE','-77.83592832');
-setenv('MATLABFLAG_PLOTROAD_REFERENCE_ALTITUDE','344.189');
-
-
-%% Set environment flags for plotting
-% These are values to set if we are forcing image alignment via Lat and Lon
-% shifting, when doing geoplot. This is added because the geoplot images
-% are very, very slightly off at the test track, which is confusing when
-% plotting data
-setenv('MATLABFLAG_PLOTROAD_ALIGNMATLABLLAPLOTTINGIMAGES_LAT','-0.0000008');
-setenv('MATLABFLAG_PLOTROAD_ALIGNMATLABLLAPLOTTINGIMAGES_LON','0.0000054');
-
-%% Set up warnings
-thisVersion = version('-release');
-
-% Confirm that this is 2025b
-if ~strcmpi(thisVersion,'2025b')
-	warning('Expected release version 2025b, but found %s instead.',thisVersion);
-	fcn_DebugTools_cprintf('*red','Many errors may be introduced by using an older MATLAB version, and newer versions have not been tested yet but should work. Students using out-of-date versions are far more likely to face additional challenges in completing assignments.');
-	fprintf(1,'Press any key to continue.\n');
-	pause;
-end
-
-thisPath = pwd;
-
-% Confirm that path contains no spaces
-if contains(thisPath,' ') 
-	warning('A space character was found in the working path: %s. Spaces in file names and paths can cause evaluation errors in some of the functions within this code set.',thisPath);
-	fcn_DebugTools_cprintf('*red','Please consider installing the code into a folder that has no spaces.');
-	fprintf(1,'Press any key to continue.\n');
-	pause;
-end
-
-% Confirm that path contains no minus signs
-if contains(thisPath,'-') 
-	warning('A minus character was found in the working path: %s. Minus signs in file names and paths will cause evaluation errors in some of the functions within this code set.',thisPath);
-	fcn_DebugTools_cprintf('*red','Please re-install the code into a folder that has no minus signs in the path name.');
-	fprintf(1,'Press any key to continue.\n');
-	pause;
-end
-
-
-%% Create Submissions folder
-if ~exist(fullfile(pwd,'Submissions'),'dir')
-	mkdir('Submissions');
-end
-
-%% Create StudentWork folder
-if ~exist(fullfile(pwd,'StudentWork'),'dir')
-	mkdir('StudentWork');
-end
 
 %% Start of Demo Code
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -303,68 +152,68 @@ scriptToRun = ''; % Assume an empty script to start
 fprintf(1,'Checking which scripts need to run:\n');
 
 if 1==1
-     % Run Week01_Quiz01_Intro?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz01_Intro',false);
+	% Run Week01_Quiz01_Intro?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz01_Intro',false);
 
-    % Run Week01_Quiz02_WhatIsAVehicle?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz02_WhatIsAVehicle',false);
+	% Run Week01_Quiz02_WhatIsAVehicle?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz02_WhatIsAVehicle',false);
 
-    % Run Week01_Quiz03_Syllabus?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz03_Syllabus',false);
+	% Run Week01_Quiz03_Syllabus?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week01_Quiz03_Syllabus',false);
 
-    % Run Week02_Quiz04_NumericalSimICs?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz04_NumericalSimICs',false);
+	% Run Week02_Quiz04_NumericalSimICs?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz04_NumericalSimICs',false);
 
-    % Run Week02_Quiz05_NumericalSimDeltaTs?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz05_NumericalSimDeltaTs',false);
+	% Run Week02_Quiz05_NumericalSimDeltaTs?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_Quiz05_NumericalSimDeltaTs',false);
 
-    % Run script_Week02_HW1_InitialsViaGPS?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_HW1_InitialsViaGPS',false);
+	% Run script_Week02_HW1_InitialsViaGPS?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week02_HW1_InitialsViaGPS',false);
 
-    % Run Week03_Quiz06_CoordinateSystemX?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz06_CoordinateSystemX',false);
+	% Run Week03_Quiz06_CoordinateSystemX?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz06_CoordinateSystemX',false);
 
-    % Run Week03_Quiz07_CoordinateSystemRotations?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz07_CoordinateSystemRotations',false);
+	% Run Week03_Quiz07_CoordinateSystemRotations?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_Quiz07_CoordinateSystemRotations',false);
 
-    % Run Week03_HW2_RungeKuttaEngine?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_HW2_RungeKuttaEngine',false);
+	% Run Week03_HW2_RungeKuttaEngine?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week03_HW2_RungeKuttaEngine',false);
 
-    % Run Week04_HW3_RungeKuttaKinematics?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_HW3_RungeKuttaKinematics',false);
+	% Run Week04_HW3_RungeKuttaKinematics?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_HW3_RungeKuttaKinematics',false);
 
-    % Run Week04_Quiz08_AckermanSteeringAngle?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz08_AckermanSteeringAngle',false);
+	% Run Week04_Quiz08_AckermanSteeringAngle?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz08_AckermanSteeringAngle',false);
 
-    % Run Week04_Quiz09_HighSpeedSteadyState?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz09_HighSpeedSteadyState',false);
+	% Run Week04_Quiz09_HighSpeedSteadyState?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz09_HighSpeedSteadyState',false);
 
-    % Run Week04_Quiz10_UndersteerCurves?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz10_UndersteerCurves',false);
+	% Run Week04_Quiz10_UndersteerCurves?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz10_UndersteerCurves',false);
 
-    % Run Week04_Quiz11_CriticalSpeedQuestions?
+	% Run Week04_Quiz11_CriticalSpeedQuestions?
 	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week04_Quiz11_CriticalSpeedQuestions',true);
 
-    % Run Week05_Quiz12_Sideslip?
+	% Run Week05_Quiz12_Sideslip?
 	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_Quiz12_Sideslip',true);
 
-    % Run Week05_HW4_VehicleParameters?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_HW4_VehicleParameters',true);
+	% Run Week05_HW4_VehicleParameters?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_HW4_VehicleParameters',true);
 
-    % Run Week05_Quiz13_AccelerationComponents?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_Quiz13_AccelerationComponents',true);
-	
-    % Run Week06_Quiz15_EquationsOfMotion?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_Quiz15_EquationsOfMotion',true);
-	
-    % Run Week06_Quiz16_ModelAnalysis?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_Quiz16_ModelAnalysis',true);
+	% Run Week05_Quiz13_AccelerationComponents?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week05_Quiz13_AccelerationComponents',true);
 
-    % Run Week06_HW5_AutomatedParking?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_HW5_AutomatedParking',true);
+	% Run Week06_Quiz15_EquationsOfMotion?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_Quiz15_EquationsOfMotion',true);
 
-    % Run Week07_HW6_BicycleModelDynamics?
-    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week07_HW6_BicycleModelDynamics',true);
+	% Run Week06_Quiz16_ModelAnalysis?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_Quiz16_ModelAnalysis',true);
+
+	% Run Week06_HW5_AutomatedParking?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_HW5_AutomatedParking',true);
+
+	% Run Week07_HW6_BicycleModelDynamics?
+	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week07_HW6_BicycleModelDynamics',true);
 
 else
 	% Run Week06_EXAM1? (Quiz 14)
@@ -419,7 +268,7 @@ if flagNeedToCheck
 		if ~any(strcmp(answers,'SUBMITTED'))
 			scriptToRun = scriptToRunName;
 			fprintf(1,'<-- data file found but not yet submitted. Need to run the script.\n');
-		else 
+		else
 			fprintf(1,'<-- data file found and assignment submitted. Assignment is done!\n');
 		end
 	else
@@ -443,19 +292,271 @@ clear path
 path_dirs = regexp(path,'[;]','split');
 utilities_dir = fullfile(pwd,filesep,'Utilities');
 for ith_dir = 1:length(path_dirs)
-    utility_flag = strfind(path_dirs{ith_dir},utilities_dir);
-    if ~isempty(utility_flag)
-        rmpath(path_dirs{ith_dir});
-    end
+	utility_flag = strfind(path_dirs{ith_dir},utilities_dir);
+	if ~isempty(utility_flag)
+		rmpath(path_dirs{ith_dir});
+	end
 end
 
 % Delete the Utilities folder, to be extra clean!
 if  exist(utilities_dir,'dir')
-    [status,message,message_ID] = rmdir(utilities_dir,'s');
-    if 0==status
-        error('Unable remove directory: %s \nReason message: %s \nand message_ID: %s\n',utilities_dir, message,message_ID);
-    end
+	[status,message,message_ID] = rmdir(utilities_dir,'s');
+	if 0==status
+		error('Unable remove directory: %s \nReason message: %s \nand message_ID: %s\n',utilities_dir, message,message_ID);
+	end
 end
 
 end % Ends fcn_INTERNAL_clearUtilitiesFromPathAndFolders
+
+%% function fcn_INTERNAL_checkForPriorDebugInstall
+function [flag_previousInstallFound, func_handle_addSubdirectoriesToPath, func_handle_autoInstallRepos, func_handle_isThisComputerOnline] = fcn_INTERNAL_checkForPriorDebugInstall
+
+% Initialize default outputs
+flag_previousInstallFound = false;
+func_handle_addSubdirectoriesToPath = [];
+func_handle_autoInstallRepos  = [];
+func_handle_isThisComputerOnline  = [];
+
+% Navigate to the Utilities directory
+utilitiesFolderSearch = fullfile(pwd,'Utilities');
+if exist(utilitiesFolderSearch,'dir')
+	dirCommand = fullfile(utilitiesFolderSearch,'DebugTools*.');
+	debugsInstalled = dir(dirCommand);
+
+	% Were any DebugTools installs found?
+	if ~isempty(debugsInstalled)
+		flag_previousInstallFound = true; % Mark flag that it was found
+		mostRecentDebugInstall = fullfile(debugsInstalled(end).folder,debugsInstalled(end).name,'Functions');
+
+		currentFolder = pwd; % Save the current folder
+
+		cd(mostRecentDebugInstall); % Move into the utilities folder
+
+		% Create a function handles
+		func_handle_addSubdirectoriesToPath = @fcn_DebugTools_addSubdirectoriesToPath;
+		func_handle_autoInstallRepos = @fcn_DebugTools_autoInstallRepos;
+		func_handle_isThisComputerOnline = @fcn_DebugTools_isThisComputerOnline;
+
+		% Return to the root directory
+		cd(currentFolder);
+	end
+end
+end % Ends fcn_INTERNAL_checkForPriorDebugInstall
+
+
+%% function fcn_INTERNAL_checkForAutoinstall
+function [flag_previousInstallFound, func_handle_autoInstallRepos] = fcn_INTERNAL_checkForAutoinstall
+
+flag_previousInstallFound = false;
+
+% Navigate to the Utilities directory
+autoinstallFolderSearch = fullfile(pwd,'Installer');
+if exist(autoinstallFolderSearch,'dir')
+	flag_previousInstallFound = true;% Set flag to indicate it was found
+	currentFolder = pwd; % Save the current folder
+	cd(autoinstallFolderSearch); % Move into the Installer folder
+	func_handle_autoInstallRepos = @fcn_DebugTools_autoInstallRepos; % Create function handle
+	cd(currentFolder); % Return to the root directory
+end
+end % fcn_INTERNAL_checkForAutoinstall
+
+%% fcn_INTERNAL_setupWorkspace
+function fcn_INTERNAL_setupWorkspace 
+
+%% Install dependencies
+% Define a universal resource locator (URL) pointing to the repos of
+% dependencies to install. Note that DebugTools is always installed
+% automatically, first, even if not listed:
+ith_repo = 0;
+
+ith_repo = ith_repo+1;
+dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/PathPlanning_PathTools_PathClassLibrary';
+dependencySubfolders{ith_repo} = {'Functions','Data'};
+dependencyInstallRootName{ith_repo} = 'PathClass';
+dependencySubdependencyRootNames{ith_repo} = {}; 
+
+ith_repo = ith_repo+1;
+dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/PathPlanning_PathTools_GetUserInputPath';
+dependencySubfolders{ith_repo} = {''};
+dependencyInstallRootName{ith_repo} = 'GetUserInputPath';
+dependencySubdependencyRootNames{ith_repo} = {}; 
+
+ith_repo = ith_repo+1;
+dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/FieldDataCollection_VisualizingFieldData_PlotRoad';
+dependencySubfolders{ith_repo} = {'Functions','Data'};
+dependencyInstallRootName{ith_repo} = 'PlotRoad';
+dependencySubdependencyRootNames{ith_repo} = {}; 
+
+ith_repo = ith_repo+1;
+dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/Classes_Grading_PrepareSubmission';
+dependencySubfolders{ith_repo} = {''};
+dependencyInstallRootName{ith_repo} = 'PrepareSubmission';
+dependencySubdependencyRootNames{ith_repo} = {}; 
+
+ith_repo = ith_repo+1;
+dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/PathPlanning_GeomTools_GeomClassLibrary';
+dependencySubfolders{ith_repo} = {'Functions','Data'};
+dependencyInstallRootName{ith_repo} = 'GeometryClass';
+dependencySubdependencyRootNames{ith_repo} = {}; 
+
+ith_repo = ith_repo+1;
+dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/FieldDataCollection_GPSRelatedCodes_GPSClass';
+dependencySubfolders{ith_repo} = {'Functions'};
+dependencyInstallRootName{ith_repo} = 'GPSClass';
+dependencySubdependencyRootNames{ith_repo} = {}; 
+
+ith_repo = ith_repo+1;
+dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/VehicleSimulations_ChassisModels_VDClass';
+dependencySubfolders{ith_repo} = {'Functions','Data'};
+dependencyInstallRootName{ith_repo} = 'VDClass';
+dependencySubdependencyRootNames{ith_repo} = {}; %#ok<NASGU>
+
+% Check if prior installs exist
+[flag_previousDebugFound, func_handle_addSubdirectoriesToPath, func_handle_autoInstallReposDebug, func_handle_isThisComputerOnline] = fcn_INTERNAL_checkForPriorDebugInstall;
+[flag_previousAutoinstallFound, func_handle_autoInstallReposAutoinstall] = fcn_INTERNAL_checkForAutoinstall;
+
+if ~flag_previousDebugFound && ~flag_previousAutoinstallFound
+	error('Installers are missing. Irrecoverable error!');
+else
+	% Decide which autoInstaller to use, defaulting to the most recent
+	% one
+	if flag_previousDebugFound
+		func_handle_autoInstallRepos = func_handle_autoInstallReposDebug;
+	else
+		func_handle_autoInstallRepos = func_handle_autoInstallReposAutoinstall;
+	end
+end
+
+% Check if online?
+if flag_previousDebugFound
+	flag_isOnline = func_handle_isThisComputerOnline();
+else
+	flag_isOnline = true; % Default to assuming online
+end
+
+% If computer is onffline, install folders manually
+if ~flag_isOnline
+	fprintf(1,'This computer appears to be offline. The code will be run with libraries that are already installed. However, any updates to these libraries including bug fixes may be missed. Use code with caution!\n');
+	fprintf(1,'Press any key to continue.\n');
+	% pause;
+
+	if ~flag_previousDebugFound
+		error('Computer appears offline and no prior installs found of debug folders. A prior install of this folder is needed to proceed. Quitting.');
+	end
+	pathToSearch = fullfile(pwd,'Utilities');
+	subfolders = dir(pathToSearch);
+	subfolders = subfolders([subfolders.isdir]);
+	namedSubfolders = subfolders(~ismember({subfolders.name},{'.','..'}));
+	existingFolderNameList = {namedSubfolders.name}';
+
+	dependencyInstallRootName = [{'DebugTools'},dependencyInstallRootName(:)']';
+	dependencySubfolders      = [{{'Functions','Data'}},dependencySubfolders(:)']';
+	% Add each locally available dependency to the MATLAB path
+	for ith_repo = 1:length(dependencyInstallRootName)
+		thisRootName = dependencyInstallRootName{ith_repo};
+
+		if ~contains(existingFolderNameList,thisRootName)
+			error('A required dependency, named %.s, was not found among the packages already installed in the Utilities folder. A prior install of this folder is needed to proceed. Quitting.',thisRootName);
+		else
+			folderIndexToAdd = find(contains(existingFolderNameList,thisRootName),1);
+		end
+
+		fprintf(1,'\tAdding already installed library to the path: %s\n',namedSubfolders(folderIndexToAdd).name);
+		thisFolderRoot = fullfile(namedSubfolders(folderIndexToAdd).folder,namedSubfolders(folderIndexToAdd).name);
+		func_handle_addSubdirectoriesToPath(thisFolderRoot,dependencySubfolders{ith_repo});
+	end
+
+else
+	% Clear prior global variable flags
+	clear global FLAG_*
+
+	% Call the function to do the install
+	func_handle_autoInstallRepos(dependencyURLs, dependencySubfolders, (0), (-1));
+end
+
+% Add this function's folders to the path
+this_project_folders = {...
+	'Functions','Data', 'Assignments', 'Submissions'};
+fprintf(1,'\tAdding this project folders to the path: \n');
+for ith_folder = 1:length(this_project_folders)
+	thisFolder = this_project_folders{ith_folder};
+	fprintf(1,'\t\tAdding subfolder: %s\n',thisFolder);
+end
+fcn_DebugTools_addSubdirectoriesToPath(pwd,this_project_folders)
+
+
+%% Set environment flags for input checking in VD2026 library
+% These are values to set if we want to check inputs or do debugging
+setenv('MATLABFLAG_VD2026_FLAG_CHECK_INPUTS','1');
+setenv('MATLABFLAG_VD2026_FLAG_DO_DEBUG','0');
+
+%% Set environment flags that define the ENU origin
+% This sets the "center" of the ENU coordinate system for all plotting
+% functions
+% Location for Test Track base station
+setenv('MATLABFLAG_PLOTROAD_REFERENCE_LATITUDE','40.86368573');
+setenv('MATLABFLAG_PLOTROAD_REFERENCE_LONGITUDE','-77.83592832');
+setenv('MATLABFLAG_PLOTROAD_REFERENCE_ALTITUDE','344.189');
+
+
+%% Set environment flags for plotting
+% These are values to set if we are forcing image alignment via Lat and Lon
+% shifting, when doing geoplot. This is added because the geoplot images
+% are very, very slightly off at the test track, which is confusing when
+% plotting data
+setenv('MATLABFLAG_PLOTROAD_ALIGNMATLABLLAPLOTTINGIMAGES_LAT','-0.0000008');
+setenv('MATLABFLAG_PLOTROAD_ALIGNMATLABLLAPLOTTINGIMAGES_LON','0.0000054');
+
+%% Set up warnings
+thisVersion = version('-release');
+thisVersionYear = str2double(thisVersion(1:4));
+
+% Confirm that this is 2025b
+if ~strcmpi(thisVersion,'2025b')
+
+	% Save current backtrace state, turn it off, issue the warning, then restore
+	saved = warning("query","backtrace");
+	warning("off","backtrace");
+	if thisVersionYear<2025
+		warning('Expected release versions 2025a or 2025b, but found older release %s instead.',thisVersion);
+		fcn_DebugTools_cprintf('*red','Many errors may be introduced by using an older MATLAB version.\n Students using out-of-date versions are far more likely to face additional challenges in completing assignments.\n');
+	else
+		warning('Expected release versions 2025a or 2025b, but found newer release %s instead.',thisVersion);
+		fcn_DebugTools_cprintf('*red','Newer versions have not been tested yet but should work.\nStudents are asked to report any code discrepancies so that the code can remain up-to-date!.\n');
+	end
+	warning(saved);
+	fprintf(1,'Press any key to continue.\n');
+	pause;
+end
+
+thisPath = pwd;
+
+% Confirm that path contains no spaces
+if contains(thisPath,' ')
+	warning('A space character was found in the working path: %s. Spaces in file names and paths can cause evaluation errors in some of the functions within this code set.',thisPath);
+	fcn_DebugTools_cprintf('*red','Please consider installing the code into a folder that has no spaces.');
+	fprintf(1,'Press any key to continue.\n');
+	pause;
+end
+
+% Confirm that path contains no minus signs
+if contains(thisPath,'-')
+	warning('A minus character was found in the working path: %s. Minus signs in file names and paths will cause evaluation errors in some of the functions within this code set.',thisPath);
+	fcn_DebugTools_cprintf('*red','Please re-install the code into a folder that has no minus signs in the path name.');
+	fprintf(1,'Press any key to continue.\n');
+	pause;
+end
+
+
+%% Create Submissions folder
+if ~exist(fullfile(pwd,'Submissions'),'dir')
+	mkdir('Submissions');
+end
+
+%% Create StudentWork folder
+if ~exist(fullfile(pwd,'StudentWork'),'dir')
+	mkdir('StudentWork');
+end
+
+end % Ends fcn_INTERNAL_setupWorkspace
 
