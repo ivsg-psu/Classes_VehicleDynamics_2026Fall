@@ -40,6 +40,12 @@ function thisStudentID = fcn_VDCore_getStudentID(varargin)
 % - In fcn_VDCore_getStudentID
 %   % * First write of the function
 %   % * Used fcn_DebugTools_copyStructureSelections as starter
+%
+% 2026_11_16 by Sean Brennan, sbrennan@psu.edu
+% - In fcn_VDCore_getStudentID
+%   % * Changed the default submission to submit and quit
+%   % * Removed help call, which was causing bugs
+%   % * Goal is to avoid menu confusion
 
 % TO-DO:
 % 
@@ -173,7 +179,7 @@ if ~exist('thisStudentID','var')
 	selections(numQuestions).AnswerTypeOptions = [1 1];
 	selections(numQuestions).AnswerPrintFormat = '%.0f';
 	selections(numQuestions).AnswerAllowableRange = [7000000 9999999];
-	selections(numQuestions).FunctionMore = sprintf('fcn_help_%s(%.0f, answers, selections);',thisName,numQuestions);
+	selections(numQuestions).FunctionMore = [];
 	selections(numQuestions).FunctionPreMenu = {[]};
 	selections(numQuestions).FunctionMoreInputs = {30};
 	selections(numQuestions).FunctionSubmission = '[answers, numBadOptionInputs, flag_exitMain] = fcn_INTERNAL_enterData(answers, selections, selectedOptionCharacters, numBadOptionInputs)';
@@ -187,15 +193,15 @@ if ~exist('thisStudentID','var')
 	%%%% Quit
 
 	numQuestions = numQuestions+1;
-	selections(numQuestions).MenuChar = 'q';
-	selections(numQuestions).Name = 'Quit';
-	selections(numQuestions).Text = '(Q)uit this submenu.';
+	selections(numQuestions).MenuChar = 's';
+	selections(numQuestions).Name = 'Submit';
+	selections(numQuestions).Text = '(S)ubmit answers and quit this submenu.';
 	selections(numQuestions).AnswerDefault = ' ';
 	selections(numQuestions).AnswerType = '1column_of_integers';
 	selections(numQuestions).AnswerConversionFunction = 'str2double';
 	selections(numQuestions).AnswerTypeOptions = [1 1];
 	selections(numQuestions).AnswerPrintFormat = '%.0f';
-	selections(numQuestions).FunctionMore = sprintf('fcn_help_%s(%.0f, answers, selections);',thisName,numQuestions);
+	selections(numQuestions).FunctionMore = [];
 	selections(numQuestions).FunctionPreMenu = {[]};
 	% selections(numQuestions).FunctionPreMenu = {...
 	% 	sprintf('selections = fcn_help_%s(%.0f, answers, selections);',thisName,numQuestions+100)

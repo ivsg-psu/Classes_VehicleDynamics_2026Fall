@@ -88,12 +88,15 @@
 % 2026_11_13 by Sean Brennan, sbrennan@psu.edu
 % - In script_demo_2026Fall
 %   % * Major changes to installer code so that it will work offline
+%
+% 2026_11_16 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_2026Fall
+%   % * Added Week07_Quiz17_ExperimentalMeasurement to assignment list
+%   % * Input bug fixes in many other files
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
 %   % * Finish editing day-to-day presentations
-%   % * Add quiz codes
-%   % * Fixed bug in getting student ID, if it is left blank
 
 %% Make sure we are running out of root directory
 st = dbstack;
@@ -214,6 +217,9 @@ if 1==1
 
 	% Run Week07_HW6_BicycleModelDynamics?
 	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week07_HW6_BicycleModelDynamics',true);
+
+	% Run Week07_Quiz17_ExperimentalMeasurement?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week07_Quiz17_ExperimentalMeasurement',true);
 
 else
 	% Run Week06_EXAM1? (Quiz 14)
