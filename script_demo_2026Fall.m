@@ -1,4 +1,4 @@
- %% Introduction to and Purpose of the Code
+%% Introduction to and Purpose of the Code
 % This is the explanation of the code that can be found by running
 %
 %       script_demo_2026Spring.m
@@ -93,6 +93,10 @@
 % - In script_demo_2026Fall
 %   % * Added Week07_Quiz17_ExperimentalMeasurement to assignment list
 %   % * Input bug fixes in many other files
+%
+% 2026_11_16 by Sean Brennan, sbrennan@psu.edu
+% - In Installer
+%   % * Updated to latest autoInstaller
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -526,7 +530,7 @@ if ~strcmpi(thisVersion,'2025b')
 	if thisVersionYear<2025
 		warning('Expected release versions 2025a or 2025b, but found older release %s instead.',thisVersion);
 		fcn_DebugTools_cprintf('*red','Many errors may be introduced by using an older MATLAB version.\n Students using out-of-date versions are far more likely to face additional challenges in completing assignments.\n');
-	else
+    elseif thisVersionYear>2025
 		warning('Expected release versions 2025a or 2025b, but found newer release %s instead.',thisVersion);
 		fcn_DebugTools_cprintf('*red','Newer versions have not been tested yet but should work.\nStudents are asked to report any code discrepancies so that the code can remain up-to-date!.\n');
 	end

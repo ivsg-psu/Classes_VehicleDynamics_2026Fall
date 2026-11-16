@@ -162,6 +162,13 @@ function fcn_DebugTools_autoInstallRepos(...
 %   % * Moved fcn_INTERNAL_addSubdirectoriesToPath internally to avoid
 %   %   % issues with unrecognized function calls
 %   % * Fixed several other exposed DebugTool calls with INTERNAL copies
+% 
+% 2026_11_16 by Sean Brennan, sbrennan@psu.edu
+% - In fcn_DebugTools_autoInstallRepos
+%   % * Changed default URL to Google's DNS to avoid issues with MacOS,
+%   %   % within fcn_INTERNAL_isThisComputerOnline (same change as in external
+%   %   % function)
+
 
 % TO-DO:
 % - Would like to have the following functionality:
@@ -1238,7 +1245,7 @@ function [isOnline] = fcn_INTERNAL_isThisComputerOnline(varargin)
 %
 %      (OPTIONAL INPUTS)
 %
-%      url: the URL to use for testing. Default is 'google.com'
+%      url: the URL to use for testing. Default is '8.8.8.8'
 %
 %      timeout: the timeout in milliseconds to use. Default is 100.
 %
@@ -1337,7 +1344,7 @@ if 0 == flag_max_speed
 end
 
 % Does user want to specify url?
-url = 'google.com';
+url = '8.8.8.8';
 if 1 <= nargin
 	input = varargin{1};
 	if ~isempty(input)
