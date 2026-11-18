@@ -97,6 +97,10 @@
 % 2026_11_16 by Sean Brennan, sbrennan@psu.edu
 % - In Installer
 %   % * Updated to latest autoInstaller
+%
+% 2026_11_17 by Sean Brennan, sbrennan@psu.edu
+% - In script_demo_2026Fall
+%   % * Added Week07_Quiz18_HigherOrderDynamics
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -225,6 +229,9 @@ if 1==1
 	% Run Week07_Quiz17_ExperimentalMeasurement?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week07_Quiz17_ExperimentalMeasurement',true);
 
+	% Run Week07_Quiz18_HigherOrderDynamics?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week07_Quiz18_HigherOrderDynamics',true);
+	
 else
 	% Run Week06_EXAM1? (Quiz 14)
 	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
