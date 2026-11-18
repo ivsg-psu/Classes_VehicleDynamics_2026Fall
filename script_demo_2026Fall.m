@@ -242,6 +242,9 @@ if 1==1
 	% Run Week09_Quiz24_TirePropertiesForceGeneration?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week09_Quiz24_TirePropertiesForceGeneration',true);
 
+	% Run Week09_Quiz25_TirePropertiesCamber?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week09_Quiz25_TirePropertiesCamber',true);
+
 else
 	% Run Week06_EXAM1? (Quiz 14)
 	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
