@@ -439,6 +439,12 @@ ith_repo = ith_repo+1;
 dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/VehicleSimulations_ChassisModels_VDClass';
 dependencySubfolders{ith_repo} = {'Functions','Data'};
 dependencyInstallRootName{ith_repo} = 'VDClass';
+dependencySubdependencyRootNames{ith_repo} = {}; 
+
+ith_repo = ith_repo+1;
+dependencyURLs{ith_repo} = 'https://github.com/ivsg-psu/FeatureExtraction_DataClean_BreakDataIntoLaps';
+dependencySubfolders{ith_repo} = {'Functions','Data'}; 
+dependencyInstallRootName{ith_repo} = 'BreakDataIntoLaps';
 dependencySubdependencyRootNames{ith_repo} = {}; %#ok<NASGU>
 
 % Check if prior installs exist
