@@ -236,6 +236,12 @@ if 1==1
 	% Run Week08_Quiz19_ModelFreeDrivingControllers?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week08_Quiz19_ModelFreeDrivingControllers',true);
 
+	% Run Week09_Quiz23_TirePropertiesGeometry?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week09_Quiz23_TirePropertiesGeometry',true);
+
+	% Run Week09_Quiz24_TirePropertiesForceGeneration?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week09_Quiz24_TirePropertiesForceGeneration',true);
+
 else
 	% Run Week06_EXAM1? (Quiz 14)
 	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
