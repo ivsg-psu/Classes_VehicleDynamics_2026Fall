@@ -101,6 +101,7 @@
 % 2026_11_17 by Sean Brennan, sbrennan@psu.edu
 % - In script_demo_2026Fall
 %   % * Added Week07_Quiz18_HigherOrderDynamics
+%   % * Added Week08_Quiz19_ModelFreeDrivingControllers
 
 % TO-DO:
 % - 2026_08_24 by Sean Brennan, sbrennan@psu.edu
@@ -232,6 +233,9 @@ if 1==1
 	% Run Week07_Quiz18_HigherOrderDynamics?
     scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week07_Quiz18_HigherOrderDynamics',true);
 	
+	% Run Week08_Quiz19_ModelFreeDrivingControllers?
+    scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week08_Quiz19_ModelFreeDrivingControllers',true);
+
 else
 	% Run Week06_EXAM1? (Quiz 14)
 	scriptToRun = fcn_INTERNAL_checkIfStudentAlreadyDidAssignment(scriptToRun,'Week06_EXAM1',true);
